@@ -1,0 +1,45 @@
+# ROS2 colcon build artifacts
+build/
+install/
+log/
+
+# Colcon metadata
+.colcon/
+
+# CMake
+CMakeFiles/
+CMakeCache.txt
+cmake_install.cmake
+Makefile
+
+# Python
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+
+# VS Code
+.vscode/
+
+# JetBrains
+.idea/
+
+# Ubuntu temp files
+*~
+*.swp
+*.swo
+
+# System files
+.DS_Store
+Thumbs.db
+
+# ROS logs
+*.log
+
+# Environment files
+.env
+
+# Compiled libraries
+*.so
+*.a
+*.o
