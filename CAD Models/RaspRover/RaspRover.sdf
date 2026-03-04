@@ -1,0 +1,278 @@
+<?xml version='1.0' encoding='utf-8'?>
+<sdf version="1.7">
+    <model name="RaspRover">
+        <link name="Frame">
+            <pose>-0.20028636462047886 -0.19208693208140987 -0.025302502944574354 0.0 -0.0 0.0</pose>
+            <inertial>
+                <mass>5.579383607380707</mass>
+                <pose>0.20028636462033814 -0.18323941887010897 -0.06135761534332392 0.0 0.0 0.0</pose>
+                <inertia>
+                    <ixx>0.02847691327034607</ixx>
+                    <iyy>0.02865581345503715</iyy>
+                    <izz>0.019928345018228377</izz>
+                    <ixy>6.472854537060589e-14</ixy>
+                    <iyz>-0.0008419559123031273</iyz>
+                    <ixz>2.1132946891482912e-14</ixz>
+                </inertia>
+            </inertial>
+            <visual name="Frame_visual">
+                <geometry>
+                    <mesh>
+                        <uri>model://RaspRover/meshes/Frame.stl</uri>
+                        <scale>0.001 0.001 0.001</scale>
+                    </mesh>
+                </geometry>
+            </visual>
+            <collision name="Frame_collision">
+                <geometry>
+                    <mesh>
+                        <uri>model://RaspRover/meshes/Frame.stl</uri>
+                        <scale>0.001 0.001 0.001</scale>
+                    </mesh>
+                </geometry>
+            </collision>
+        </link>
+        <link name="Wheel_BR">
+            <pose>0.05540000000000006 -0.328775291827747 -0.07799189387866866 3.141592653589793 3.6113264991378444e-29 1.462882103035501e-15</pose>
+            <inertial>
+                <mass>0.6443509094467514</mass>
+                <pose>-0.13040083823203708 0.11519385390312534 -0.050130826530644726 0.0 0.0 0.0</pose>
+                <inertia>
+                    <ixx>0.0002968568953161683</ixx>
+                    <iyy>0.00019567138334215822</iyy>
+                    <izz>0.00019786483354355922</izz>
+                    <ixy>-3.1298758269496377e-09</ixy>
+                    <iyz>-6.085253848441708e-07</iyz>
+                    <ixz>1.5396041223816887e-08</ixz>
+                </inertia>
+            </inertial>
+            <visual name="Wheel_BR_visual">
+                <geometry>
+                    <mesh>
+                        <uri>model://RaspRover/meshes/Wheel_BR.stl</uri>
+                        <scale>0.001 0.001 0.001</scale>
+                    </mesh>
+                </geometry>
+            </visual>
+            <collision name="Wheel_BR_collision">
+                <geometry>
+                    <mesh>
+                        <uri>model://RaspRover/meshes/Wheel_BR.stl</uri>
+                        <scale>0.001 0.001 0.001</scale>
+                    </mesh>
+                </geometry>
+            </collision>
+        </link>
+        <link name="Wheel_BL">
+            <pose>-0.07460000000000014 -0.32877529182774695 -0.07799189387866864 3.141592653589793 -1.3357091424688758e-29 -2.6188201933805157e-15</pose>
+            <inertial>
+                <mass>0.6443509094520935</mass>
+                <pose>0.14959916176784255 0.1151938539030266 -0.05013082653041756 0.0 0.0 0.0</pose>
+                <inertia>
+                    <ixx>0.00029685689532088673</ixx>
+                    <iyy>0.00019567138334729387</iyy>
+                    <izz>0.00019786483354541885</izz>
+                    <ixy>-3.129876764113324e-09</ixy>
+                    <iyz>-6.085253830955695e-07</iyz>
+                    <ixz>1.539604337400415e-08</ixz>
+                </inertia>
+            </inertial>
+            <visual name="Wheel_BL_visual">
+                <geometry>
+                    <mesh>
+                        <uri>model://RaspRover/meshes/Wheel_BL.stl</uri>
+                        <scale>0.001 0.001 0.001</scale>
+                    </mesh>
+                </geometry>
+            </visual>
+            <collision name="Wheel_BL_collision">
+                <geometry>
+                    <mesh>
+                        <uri>model://RaspRover/meshes/Wheel_BL.stl</uri>
+                        <scale>0.001 0.001 0.001</scale>
+                    </mesh>
+                </geometry>
+            </collision>
+        </link>
+        <link name="Wheel_FR">
+            <pose>0.055400000000000456 -0.3895752918277476 -0.0779918938786686 3.141592653589793 3.0511890341122624e-29 1.462882103035501e-15</pose>
+            <inertial>
+                <mass>0.6443509094520934</mass>
+                <pose>-0.13040083823215917 -0.07480614609697454 -0.05013082653041758 0.0 0.0 0.0</pose>
+                <inertia>
+                    <ixx>0.0002968568953209006</ixx>
+                    <iyy>0.00019567138334730688</iyy>
+                    <izz>0.000197864833545516</izz>
+                    <ixy>-3.1298767741086556e-09</ixy>
+                    <iyz>-6.085253830955695e-07</iyz>
+                    <ixz>1.5396043375090837e-08</ixz>
+                </inertia>
+            </inertial>
+            <visual name="Wheel_FR_visual">
+                <geometry>
+                    <mesh>
+                        <uri>model://RaspRover/meshes/Wheel_FR.stl</uri>
+                        <scale>0.001 0.001 0.001</scale>
+                    </mesh>
+                </geometry>
+            </visual>
+            <collision name="Wheel_FR_collision">
+                <geometry>
+                    <mesh>
+                        <uri>model://RaspRover/meshes/Wheel_FR.stl</uri>
+                        <scale>0.001 0.001 0.001</scale>
+                    </mesh>
+                </geometry>
+            </collision>
+        </link>
+        <link name="Wheel_FL">
+            <pose>-0.07460000000000024 -0.3895752918277479 -0.07799189387866859 3.141592653589793 3.611326499137845e-29 1.4628821030355011e-15</pose>
+            <inertial>
+                <mass>0.6443509094520934</mass>
+                <pose>0.14959916176784246 -0.07480614609697432 -0.05013082653041756 0.0 0.0 0.0</pose>
+                <inertia>
+                    <ixx>0.0002968568953209145</ixx>
+                    <iyy>0.00019567138334731555</iyy>
+                    <izz>0.00019786483354548824</izz>
+                    <ixy>-3.129876765435038e-09</ixy>
+                    <iyz>-6.085253830964369e-07</iyz>
+                    <ixz>1.5396043374873997e-08</ixz>
+                </inertia>
+            </inertial>
+            <visual name="Wheel_FL_visual">
+                <geometry>
+                    <mesh>
+                        <uri>model://RaspRover/meshes/Wheel_FL.stl</uri>
+                        <scale>0.001 0.001 0.001</scale>
+                    </mesh>
+                </geometry>
+            </visual>
+            <collision name="Wheel_FL_collision">
+                <geometry>
+                    <mesh>
+                        <uri>model://RaspRover/meshes/Wheel_FL.stl</uri>
+                        <scale>0.001 0.001 0.001</scale>
+                    </mesh>
+                </geometry>
+            </collision>
+        </link>
+        <link name="Camera_Pitch">
+            <pose>-2.842170943040401e-16 -0.3793352918277483 -0.07799189387866165 3.141592653589769 -3.884881455317634e-15 -0.1606758249850119</pose>
+            <inertial>
+                <mass>0.05213056282264724</mass>
+                <pose>-3.3441221246454055e-17 1.836797609000812e-06 0.20006247508067992 0.0 0.0 0.0</pose>
+                <inertia>
+                    <ixx>2.91601609138738e-06</ixx>
+                    <iyy>2.8170931807334762e-06</iyy>
+                    <izz>3.2214641298190743e-06</izz>
+                    <ixy>7.481947902215678e-19</ixy>
+                    <iyz>-1.7698229725906043e-11</iyz>
+                    <ixz>-1.409348177340042e-19</ixz>
+                </inertia>
+            </inertial>
+            <visual name="Camera_Pitch_visual">
+                <geometry>
+                    <mesh>
+                        <uri>model://RaspRover/meshes/Camera_Pitch.stl</uri>
+                        <scale>0.001 0.001 0.001</scale>
+                    </mesh>
+                </geometry>
+            </visual>
+            <collision name="Camera_Pitch_collision">
+                <geometry>
+                    <mesh>
+                        <uri>model://RaspRover/meshes/Camera_Pitch.stl</uri>
+                        <scale>0.001 0.001 0.001</scale>
+                    </mesh>
+                </geometry>
+            </collision>
+        </link>
+        <link name="Camera_Yaw">
+            <pose>-6.439293542825907e-17 -0.3793352918277485 -0.07799189387866165 3.141592653589769 -3.884881455317659e-15 -0.1606758249850119</pose>
+            <inertial>
+                <mass>0.13790261521555988</mass>
+                <pose>-1.3375277545663042e-14 0.00016850349875628524 0.1675507575718993 0.0 0.0 0.0</pose>
+                <inertia>
+                    <ixx>3.8542632764779055e-05</ixx>
+                    <iyy>4.374497908417354e-05</iyy>
+                    <izz>1.125784044193191e-05</izz>
+                    <ixy>-9.900968120455655e-18</ixy>
+                    <iyz>-5.570729306383907e-07</iyz>
+                    <ixz>5.920377089613141e-18</ixz>
+                </inertia>
+            </inertial>
+            <visual name="Camera_Yaw_visual">
+                <geometry>
+                    <mesh>
+                        <uri>model://RaspRover/meshes/Camera_Yaw.stl</uri>
+                        <scale>0.001 0.001 0.001</scale>
+                    </mesh>
+                </geometry>
+            </visual>
+            <collision name="Camera_Yaw_collision">
+                <geometry>
+                    <mesh>
+                        <uri>model://RaspRover/meshes/Camera_Yaw.stl</uri>
+                        <scale>0.001 0.001 0.001</scale>
+                    </mesh>
+                </geometry>
+            </collision>
+        </link>
+        <joint name="Frame_Revolute-1" type="revolute">
+            <pose>-0.11540000000000067 -0.07484029182774803 -0.049999893878668565 0.0 0.0 0.0</pose>
+            <parent>Frame</parent>
+            <child>Wheel_FR</child>
+            <axis>
+                <xyz expressed_in="__model__">1.0 0.0 0.0</xyz>
+            </axis>
+        </joint>
+        <joint name="Frame_Revolute-2" type="revolute">
+            <pose>0.13460000000000072 -0.07484029182774785 -0.04999989387866855 0.0 0.0 0.0</pose>
+            <parent>Frame</parent>
+            <child>Wheel_FL</child>
+            <axis>
+                <xyz expressed_in="__model__">1.0 0.0 0.0</xyz>
+            </axis>
+        </joint>
+        <joint name="Frame_Revolute-3" type="revolute">
+            <pose>0.13460000000000083 0.1151597081722531 -0.049999893878668586 0.0 0.0 0.0</pose>
+            <parent>Frame</parent>
+            <child>Wheel_BL</child>
+            <axis>
+                <xyz expressed_in="__model__">1.0 -0.0 0.0</xyz>
+            </axis>
+        </joint>
+        <joint name="Frame_Revolute-4" type="revolute">
+            <pose>-0.11540000000000056 0.11515970817225309 -0.0499998938786686 0.0 0.0 0.0</pose>
+            <parent>Frame</parent>
+            <child>Wheel_BR</child>
+            <axis>
+                <xyz expressed_in="__model__">1.0 0.0 0.0</xyz>
+            </axis>
+        </joint>
+        <joint name="Frame_Revolute-5" type="revolute">
+            <pose>-4.6688168773923206e-08 -2.88068831526081e-07 0.14000010612133823 0.0 0.0 0.0</pose>
+            <parent>Frame</parent>
+            <child>Camera_Yaw</child>
+            <axis>
+                <xyz expressed_in="__model__">0.0 -0.0 -1.0</xyz>
+                <limit>
+                    <lower>-1.570796</lower>
+                    <upper>1.570796</upper>
+                </limit>
+            </axis>
+        </joint>
+        <joint name="Camera_Yaw_Revolute-6" type="revolute">
+            <pose>0.011999554344413441 -4.547161257262049e-08 0.20100010612133826 0.0 0.0 0.0</pose>
+            <parent>Camera_Yaw</parent>
+            <child>Camera_Pitch</child>
+            <axis>
+                <xyz expressed_in="__model__">0.987119 -0.159985 0.0</xyz>
+                <limit>
+                    <lower>-1.047198</lower>
+                    <upper>0.523599</upper>
+                </limit>
+            </axis>
+        </joint>
+    </model>
+</sdf>
