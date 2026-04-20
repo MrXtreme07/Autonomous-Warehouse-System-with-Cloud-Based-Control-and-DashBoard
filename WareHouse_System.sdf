@@ -1,0 +1,449 @@
+<sdf version='1.9'>
+  <world name='car_world'>
+    <physics name='1ms' type='ignored'>
+      <max_step_size>0.001</max_step_size>
+      <real_time_factor>1</real_time_factor>
+      <real_time_update_rate>1000</real_time_update_rate>
+    </physics>
+    <plugin name='ignition::gazebo::systems::Physics' filename='libignition-gazebo-physics-system.so'/>
+    <plugin name='ignition::gazebo::systems::UserCommands' filename='libignition-gazebo-user-commands-system.so'/>
+    <plugin name='ignition::gazebo::systems::SceneBroadcaster' filename='libignition-gazebo-scene-broadcaster-system.so'/>
+    <gravity>0 0 -9.8</gravity>
+    <magnetic_field>6e-06 2.3e-05 -4.2e-05</magnetic_field>
+    <atmosphere type='adiabatic'/>
+    <scene>
+      <ambient>0.4 0.4 0.4 1</ambient>
+      <background>0.7 0.7 0.7 1</background>
+      <shadows>true</shadows>
+    </scene>
+    <model name='ground_plane'>
+      <static>true</static>
+      <link name='link'>
+        <collision name='collision'>
+          <geometry>
+            <plane>
+              <normal>0 0 1</normal>
+              <size>1 1</size>
+            </plane>
+          </geometry>
+          <surface>
+            <friction>
+              <ode/>
+            </friction>
+            <bounce/>
+            <contact/>
+          </surface>
+        </collision>
+        <visual name='visual'>
+          <geometry>
+            <plane>
+              <normal>0 0 1</normal>
+              <size>100 100</size>
+            </plane>
+          </geometry>
+          <material>
+            <ambient>0.8 0.8 0.8 1</ambient>
+            <diffuse>0.8 0.8 0.8 1</diffuse>
+            <specular>0.8 0.8 0.8 1</specular>
+          </material>
+        </visual>
+        <pose>0 0 0 0 -0 0</pose>
+        <inertial>
+          <pose>0 0 0 0 -0 0</pose>
+          <mass>1</mass>
+          <inertia>
+            <ixx>1</ixx>
+            <ixy>0</ixy>
+            <ixz>0</ixz>
+            <iyy>1</iyy>
+            <iyz>0</iyz>
+            <izz>1</izz>
+          </inertia>
+        </inertial>
+        <enable_wind>false</enable_wind>
+      </link>
+      <pose>0 0 0 0 -0 0</pose>
+      <self_collide>false</self_collide>
+    </model>
+    <model name='RaspRover'>
+      <link name='Frame'>
+        <pose>-0.200286 -0.192087 -0.025303 0 -0 0</pose>
+        <inertial>
+          <mass>5.5793799999999996</mass>
+          <pose>0.200286 -0.183239 -0.061358 0 -0 0</pose>
+          <inertia>
+            <ixx>0.028476899999999999</ixx>
+            <iyy>0.028655799999999999</iyy>
+            <izz>0.019928299999999999</izz>
+            <ixy>6.4728499999999998e-14</ixy>
+            <iyz>-0.00084195600000000004</iyz>
+            <ixz>2.1132899999999999e-14</ixz>
+          </inertia>
+        </inertial>
+        <visual name='Frame_visual'>
+          <geometry>
+            <mesh>
+              <uri>file://meshes/Frame.stl</uri>
+              <scale>0.001 0.001 0.001</scale>
+            </mesh>
+          </geometry>
+        </visual>
+        <collision name='Frame_collision'>
+          <geometry>
+            <mesh>
+              <uri>file://meshes/Frame.stl</uri>
+              <scale>0.001 0.001 0.001</scale>
+            </mesh>
+          </geometry>
+        </collision>
+        <enable_wind>false</enable_wind>
+      </link>
+      <link name='Wheel_BR'>
+        <pose>0.0554 -0.328083 -0.076366 -3.12751 -0 0</pose>
+        <inertial>
+          <mass>0.64435100000000001</mass>
+          <pose>-0.130401 0.115194 -0.050131 0 -0 0</pose>
+          <inertia>
+            <ixx>0.00029685699999999998</ixx>
+            <iyy>0.00019567099999999999</iyy>
+            <izz>0.000197865</izz>
+            <ixy>-3.1298799999999999e-09</ixy>
+            <iyz>-6.0852500000000003e-07</iyz>
+            <ixz>1.5396000000000001e-08</ixz>
+          </inertia>
+        </inertial>
+        <visual name='Wheel_BR_visual'>
+          <geometry>
+            <mesh>
+              <uri>file://meshes/Wheel_BR.stl</uri>
+              <scale>0.001 0.001 0.001</scale>
+            </mesh>
+          </geometry>
+        </visual>
+        <collision name='Wheel_BR_collision'>
+          <geometry>
+            <mesh>
+              <uri>file://meshes/Wheel_BR.stl</uri>
+              <scale>0.001 0.001 0.001</scale>
+            </mesh>
+          </geometry>
+        </collision>
+        <enable_wind>false</enable_wind>
+      </link>
+      <link name='Wheel_BL'>
+        <pose>-0.0746 -0.328075 -0.076347 -3.12735 0 -0</pose>
+        <inertial>
+          <mass>0.64435100000000001</mass>
+          <pose>0.149599 0.115194 -0.050131 0 -0 0</pose>
+          <inertia>
+            <ixx>0.00029685699999999998</ixx>
+            <iyy>0.00019567099999999999</iyy>
+            <izz>0.000197865</izz>
+            <ixy>-3.1298799999999999e-09</ixy>
+            <iyz>-6.0852500000000003e-07</iyz>
+            <ixz>1.5396000000000001e-08</ixz>
+          </inertia>
+        </inertial>
+        <visual name='Wheel_BL_visual'>
+          <geometry>
+            <mesh>
+              <uri>file://meshes/Wheel_BL.stl</uri>
+              <scale>0.001 0.001 0.001</scale>
+            </mesh>
+          </geometry>
+        </visual>
+        <collision name='Wheel_BL_collision'>
+          <geometry>
+            <mesh>
+              <uri>file://meshes/Wheel_BL.stl</uri>
+              <scale>0.001 0.001 0.001</scale>
+            </mesh>
+          </geometry>
+        </collision>
+        <enable_wind>false</enable_wind>
+      </link>
+      <link name='Wheel_FR'>
+        <pose>0.0554 -0.382178 -0.087595 -3.00681 -0 0</pose>
+        <inertial>
+          <mass>0.64435100000000001</mass>
+          <pose>-0.130401 -0.074806 -0.050131 0 -0 0</pose>
+          <inertia>
+            <ixx>0.00029685699999999998</ixx>
+            <iyy>0.00019567099999999999</iyy>
+            <izz>0.000197865</izz>
+            <ixy>-3.1298799999999999e-09</ixy>
+            <iyz>-6.0852500000000003e-07</iyz>
+            <ixz>1.5396000000000001e-08</ixz>
+          </inertia>
+        </inertial>
+        <visual name='Wheel_FR_visual'>
+          <geometry>
+            <mesh>
+              <uri>file://meshes/Wheel_FR.stl</uri>
+              <scale>0.001 0.001 0.001</scale>
+            </mesh>
+          </geometry>
+        </visual>
+        <collision name='Wheel_FR_collision'>
+          <geometry>
+            <mesh>
+              <uri>file://meshes/Wheel_FR.stl</uri>
+              <scale>0.001 0.001 0.001</scale>
+            </mesh>
+          </geometry>
+        </collision>
+        <enable_wind>false</enable_wind>
+      </link>
+      <link name='Wheel_FL'>
+        <pose>-0.0746 -0.38216 -0.087616 -3.00651 -0 0</pose>
+        <inertial>
+          <mass>0.64435100000000001</mass>
+          <pose>0.149599 -0.074806 -0.050131 0 -0 0</pose>
+          <inertia>
+            <ixx>0.00029685699999999998</ixx>
+            <iyy>0.00019567099999999999</iyy>
+            <izz>0.000197865</izz>
+            <ixy>-3.1298799999999999e-09</ixy>
+            <iyz>-6.0852500000000003e-07</iyz>
+            <ixz>1.5396000000000001e-08</ixz>
+          </inertia>
+        </inertial>
+        <visual name='Wheel_FL_visual'>
+          <geometry>
+            <mesh>
+              <uri>file://meshes/Wheel_FL.stl</uri>
+              <scale>0.001 0.001 0.001</scale>
+            </mesh>
+          </geometry>
+        </visual>
+        <collision name='Wheel_FL_collision'>
+          <geometry>
+            <mesh>
+              <uri>file://meshes/Wheel_FL.stl</uri>
+              <scale>0.001 0.001 0.001</scale>
+            </mesh>
+          </geometry>
+        </collision>
+        <enable_wind>false</enable_wind>
+      </link>
+      <link name='Camera_Pitch'>
+        <pose>-0.003823 -0.393679 -0.078541 -3.06767 0 -0.26052</pose>
+        <inertial>
+          <mass>0.052130599999999999</mass>
+          <pose>-0 2e-06 0.200062 0 -0 0</pose>
+          <inertia>
+            <ixx>2.9160199999999998e-06</ixx>
+            <iyy>2.8170899999999998e-06</iyy>
+            <izz>3.2214600000000002e-06</izz>
+            <ixy>7.4819500000000003e-19</ixy>
+            <iyz>-1.7698199999999999e-11</iyz>
+            <ixz>-1.4093499999999999e-19</ixz>
+          </inertia>
+        </inertial>
+        <visual name='Camera_Pitch_visual'>
+          <geometry>
+            <mesh>
+              <uri>file://meshes/Camera_Pitch.stl</uri>
+              <scale>0.001 0.001 0.001</scale>
+            </mesh>
+          </geometry>
+        </visual>
+        <collision name='Camera_Pitch_collision'>
+          <geometry>
+            <mesh>
+              <uri>file://meshes/Camera_Pitch.stl</uri>
+              <scale>0.001 0.001 0.001</scale>
+            </mesh>
+          </geometry>
+        </collision>
+        <enable_wind>false</enable_wind>
+      </link>
+      <link name='Camera_Yaw'>
+        <pose>0 -0.379335 -0.077992 3.14159 -0 -0.26052</pose>
+        <inertial>
+          <mass>0.137903</mass>
+          <pose>-0 0.000169 0.167551 0 -0 0</pose>
+          <inertia>
+            <ixx>3.8542599999999999e-05</ixx>
+            <iyy>4.3745000000000002e-05</iyy>
+            <izz>1.1257799999999999e-05</izz>
+            <ixy>-9.9009700000000007e-18</ixy>
+            <iyz>-5.5707300000000003e-07</iyz>
+            <ixz>5.9203800000000002e-18</ixz>
+          </inertia>
+        </inertial>
+        <visual name='Camera_Yaw_visual'>
+          <geometry>
+            <mesh>
+              <uri>file://meshes/Camera_Yaw.stl</uri>
+              <scale>0.001 0.001 0.001</scale>
+            </mesh>
+          </geometry>
+        </visual>
+        <collision name='Camera_Yaw_collision'>
+          <geometry>
+            <mesh>
+              <uri>file://meshes/Camera_Yaw.stl</uri>
+              <scale>0.001 0.001 0.001</scale>
+            </mesh>
+          </geometry>
+        </collision>
+        <enable_wind>false</enable_wind>
+      </link>
+      <joint name='Frame_Revolute-1' type='revolute'>
+        <pose>-0.1154 -0.07484 -0.05 0 -0 0</pose>
+        <parent>Frame</parent>
+        <child>Wheel_FR</child>
+        <axis>
+          <xyz>1 0 -0</xyz>
+          <limit>
+            <lower>-10000000000000000</lower>
+            <upper>10000000000000000</upper>
+            <effort>inf</effort>
+            <velocity>inf</velocity>
+            <stiffness>100000000</stiffness>
+            <dissipation>1</dissipation>
+          </limit>
+          <dynamics>
+            <spring_reference>0</spring_reference>
+            <spring_stiffness>0</spring_stiffness>
+            <damping>0</damping>
+            <friction>0</friction>
+          </dynamics>
+        </axis>
+      </joint>
+      <joint name='Frame_Revolute-2' type='revolute'>
+        <pose>0.1346 -0.07484 -0.05 0 -0 0</pose>
+        <parent>Frame</parent>
+        <child>Wheel_FL</child>
+        <axis>
+          <xyz>1 0 -0</xyz>
+          <limit>
+            <lower>-10000000000000000</lower>
+            <upper>10000000000000000</upper>
+            <effort>inf</effort>
+            <velocity>inf</velocity>
+            <stiffness>100000000</stiffness>
+            <dissipation>1</dissipation>
+          </limit>
+          <dynamics>
+            <spring_reference>0</spring_reference>
+            <spring_stiffness>0</spring_stiffness>
+            <damping>0</damping>
+            <friction>0</friction>
+          </dynamics>
+        </axis>
+      </joint>
+      <joint name='Frame_Revolute-3' type='revolute'>
+        <pose>0.1346 0.11516 -0.05 0 -0 0</pose>
+        <parent>Frame</parent>
+        <child>Wheel_BL</child>
+        <axis>
+          <xyz>1 -0 0</xyz>
+          <limit>
+            <lower>-10000000000000000</lower>
+            <upper>10000000000000000</upper>
+            <effort>inf</effort>
+            <velocity>inf</velocity>
+            <stiffness>100000000</stiffness>
+            <dissipation>1</dissipation>
+          </limit>
+          <dynamics>
+            <spring_reference>0</spring_reference>
+            <spring_stiffness>0</spring_stiffness>
+            <damping>0</damping>
+            <friction>0</friction>
+          </dynamics>
+        </axis>
+      </joint>
+      <joint name='Frame_Revolute-4' type='revolute'>
+        <pose>-0.1154 0.11516 -0.05 0 -0 0</pose>
+        <parent>Frame</parent>
+        <child>Wheel_BR</child>
+        <axis>
+          <xyz>1 0 -0</xyz>
+          <limit>
+            <lower>-10000000000000000</lower>
+            <upper>10000000000000000</upper>
+            <effort>inf</effort>
+            <velocity>inf</velocity>
+            <stiffness>100000000</stiffness>
+            <dissipation>1</dissipation>
+          </limit>
+          <dynamics>
+            <spring_reference>0</spring_reference>
+            <spring_stiffness>0</spring_stiffness>
+            <damping>0</damping>
+            <friction>0</friction>
+          </dynamics>
+        </axis>
+      </joint>
+      <joint name='Frame_Revolute-5' type='revolute'>
+        <pose>-0 -0 0.14 0 -0 0</pose>
+        <parent>Frame</parent>
+        <child>Camera_Yaw</child>
+        <axis>
+          <xyz>-0 -0 1</xyz>
+          <limit>
+            <lower>-1.5708</lower>
+            <upper>1.5708</upper>
+            <effort>inf</effort>
+            <velocity>inf</velocity>
+            <stiffness>100000000</stiffness>
+            <dissipation>1</dissipation>
+          </limit>
+          <dynamics>
+            <spring_reference>0</spring_reference>
+            <spring_stiffness>0</spring_stiffness>
+            <damping>0</damping>
+            <friction>0</friction>
+          </dynamics>
+        </axis>
+      </joint>
+      <joint name='Camera_Yaw_Revolute-6' type='revolute'>
+        <pose>0.012 -0 0.201 0 -0 0</pose>
+        <parent>Camera_Yaw</parent>
+        <child>Camera_Pitch</child>
+        <axis>
+          <xyz>1 -0 0</xyz>
+          <limit>
+            <lower>-1.0471999999999999</lower>
+            <upper>0.52359900000000004</upper>
+            <effort>inf</effort>
+            <velocity>inf</velocity>
+            <stiffness>100000000</stiffness>
+            <dissipation>1</dissipation>
+          </limit>
+          <dynamics>
+            <spring_reference>0</spring_reference>
+            <spring_stiffness>0</spring_stiffness>
+            <damping>0</damping>
+            <friction>0</friction>
+          </dynamics>
+        </axis>
+      </joint>
+      <pose>-1.9e-05 -0.001788 0.002004 -3.14159 -0 -4.7e-05</pose>
+      <static>false</static>
+      <self_collide>false</self_collide>
+    </model>
+    <light name='sun' type='directional'>
+      <pose>0 0 10 0 -0 0</pose>
+      <cast_shadows>true</cast_shadows>
+      <intensity>1</intensity>
+      <direction>-0.5 0.1 -0.9</direction>
+      <diffuse>0.8 0.8 0.8 1</diffuse>
+      <specular>0.2 0.2 0.2 1</specular>
+      <attenuation>
+        <range>1000</range>
+        <linear>0.01</linear>
+        <constant>0.90000000000000002</constant>
+        <quadratic>0.001</quadratic>
+      </attenuation>
+      <spot>
+        <inner_angle>0</inner_angle>
+        <outer_angle>0</outer_angle>
+        <falloff>0</falloff>
+      </spot>
+    </light>
+  </world>
+</sdf>

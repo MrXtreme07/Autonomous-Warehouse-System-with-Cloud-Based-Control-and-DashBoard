@@ -1,5 +1,61 @@
 <?xml version='1.0' encoding='utf-8'?>
 <sdf version="1.7">
+<world name="car_world">
+    <physics name="1ms" type="ignored">
+        <max_step_size>0.001</max_step_size>
+        <real_time_factor>1.0</real_time_factor>
+    </physics>
+    <plugin
+        filename="libignition-gazebo-physics-system.so"
+        name="ignition::gazebo::systems::Physics">
+    </plugin>
+    <plugin
+        filename="libignition-gazebo-user-commands-system.so"
+        name="ignition::gazebo::systems::UserCommands">
+    </plugin>
+    <plugin
+        filename="libignition-gazebo-scene-broadcaster-system.so"
+        name="ignition::gazebo::systems::SceneBroadcaster">
+    </plugin>
+
+    <light type="directional" name="sun">
+        <cast_shadows>true</cast_shadows>
+        <pose>0 0 10 0 0 0</pose>
+        <diffuse>0.8 0.8 0.8 1</diffuse>
+        <specular>0.2 0.2 0.2 1</specular>
+        <attenuation>
+            <range>1000</range>
+            <constant>0.9</constant>
+            <linear>0.01</linear>
+            <quadratic>0.001</quadratic>
+        </attenuation>
+        <direction>-0.5 0.1 -0.9</direction>
+    </light>
+    <model name="ground_plane">
+        <static>true</static>
+        <link name="link">
+            <collision name="collision">
+            <geometry>
+                <plane>
+                <normal>0 0 1</normal>
+                </plane>
+            </geometry>
+            </collision>
+            <visual name="visual">
+            <geometry>
+                <plane>
+                <normal>0 0 1</normal>
+                <size>100 100</size>
+                </plane>
+            </geometry>
+            <material>
+                <ambient>0.8 0.8 0.8 1</ambient>
+                <diffuse>0.8 0.8 0.8 1</diffuse>
+                <specular>0.8 0.8 0.8 1</specular>
+            </material>
+            </visual>
+        </link>
+    </model>
     <model name="RaspRover">
         <link name="Frame">
             <pose>-0.20028636462047886 -0.19208693208140987 -0.025302502944574354 0.0 -0.0 0.0</pose>
@@ -18,7 +74,7 @@
             <visual name="Frame_visual">
                 <geometry>
                     <mesh>
-                        <uri>model://RaspRover/meshes/Frame.stl</uri>
+                        <uri>file://meshes/Frame.stl</uri>
                         <scale>0.001 0.001 0.001</scale>
                     </mesh>
                 </geometry>
@@ -26,7 +82,7 @@
             <collision name="Frame_collision">
                 <geometry>
                     <mesh>
-                        <uri>model://RaspRover/meshes/Frame.stl</uri>
+                        <uri>file://meshes/Frame.stl</uri>
                         <scale>0.001 0.001 0.001</scale>
                     </mesh>
                 </geometry>
@@ -49,7 +105,7 @@
             <visual name="Wheel_BR_visual">
                 <geometry>
                     <mesh>
-                        <uri>model://RaspRover/meshes/Wheel_BR.stl</uri>
+                        <uri>file://meshes/Wheel_BR.stl</uri>
                         <scale>0.001 0.001 0.001</scale>
                     </mesh>
                 </geometry>
@@ -57,7 +113,7 @@
             <collision name="Wheel_BR_collision">
                 <geometry>
                     <mesh>
-                        <uri>model://RaspRover/meshes/Wheel_BR.stl</uri>
+                        <uri>file://meshes/Wheel_BR.stl</uri>
                         <scale>0.001 0.001 0.001</scale>
                     </mesh>
                 </geometry>
@@ -80,7 +136,7 @@
             <visual name="Wheel_BL_visual">
                 <geometry>
                     <mesh>
-                        <uri>model://RaspRover/meshes/Wheel_BL.stl</uri>
+                        <uri>file://meshes/Wheel_BL.stl</uri>
                         <scale>0.001 0.001 0.001</scale>
                     </mesh>
                 </geometry>
@@ -88,7 +144,7 @@
             <collision name="Wheel_BL_collision">
                 <geometry>
                     <mesh>
-                        <uri>model://RaspRover/meshes/Wheel_BL.stl</uri>
+                        <uri>file://meshes/Wheel_BL.stl</uri>
                         <scale>0.001 0.001 0.001</scale>
                     </mesh>
                 </geometry>
@@ -111,7 +167,7 @@
             <visual name="Wheel_FR_visual">
                 <geometry>
                     <mesh>
-                        <uri>model://RaspRover/meshes/Wheel_FR.stl</uri>
+                        <uri>file://meshes/Wheel_FR.stl</uri>
                         <scale>0.001 0.001 0.001</scale>
                     </mesh>
                 </geometry>
@@ -119,7 +175,7 @@
             <collision name="Wheel_FR_collision">
                 <geometry>
                     <mesh>
-                        <uri>model://RaspRover/meshes/Wheel_FR.stl</uri>
+                        <uri>file://meshes/Wheel_FR.stl</uri>
                         <scale>0.001 0.001 0.001</scale>
                     </mesh>
                 </geometry>
@@ -142,7 +198,7 @@
             <visual name="Wheel_FL_visual">
                 <geometry>
                     <mesh>
-                        <uri>model://RaspRover/meshes/Wheel_FL.stl</uri>
+                        <uri>file://meshes/Wheel_FL.stl</uri>
                         <scale>0.001 0.001 0.001</scale>
                     </mesh>
                 </geometry>
@@ -150,7 +206,7 @@
             <collision name="Wheel_FL_collision">
                 <geometry>
                     <mesh>
-                        <uri>model://RaspRover/meshes/Wheel_FL.stl</uri>
+                        <uri>file://meshes/Wheel_FL.stl</uri>
                         <scale>0.001 0.001 0.001</scale>
                     </mesh>
                 </geometry>
@@ -173,7 +229,7 @@
             <visual name="Camera_Pitch_visual">
                 <geometry>
                     <mesh>
-                        <uri>model://RaspRover/meshes/Camera_Pitch.stl</uri>
+                        <uri>file://meshes/Camera_Pitch.stl</uri>
                         <scale>0.001 0.001 0.001</scale>
                     </mesh>
                 </geometry>
@@ -181,7 +237,7 @@
             <collision name="Camera_Pitch_collision">
                 <geometry>
                     <mesh>
-                        <uri>model://RaspRover/meshes/Camera_Pitch.stl</uri>
+                        <uri>file://meshes/Camera_Pitch.stl</uri>
                         <scale>0.001 0.001 0.001</scale>
                     </mesh>
                 </geometry>
@@ -204,7 +260,7 @@
             <visual name="Camera_Yaw_visual">
                 <geometry>
                     <mesh>
-                        <uri>model://RaspRover/meshes/Camera_Yaw.stl</uri>
+                        <uri>file://meshes/Camera_Yaw.stl</uri>
                         <scale>0.001 0.001 0.001</scale>
                     </mesh>
                 </geometry>
@@ -212,7 +268,7 @@
             <collision name="Camera_Yaw_collision">
                 <geometry>
                     <mesh>
-                        <uri>model://RaspRover/meshes/Camera_Yaw.stl</uri>
+                        <uri>file://meshes/Camera_Yaw.stl</uri>
                         <scale>0.001 0.001 0.001</scale>
                     </mesh>
                 </geometry>
@@ -275,4 +331,5 @@
             </axis>
         </joint>
     </model>
+</world>
 </sdf>
