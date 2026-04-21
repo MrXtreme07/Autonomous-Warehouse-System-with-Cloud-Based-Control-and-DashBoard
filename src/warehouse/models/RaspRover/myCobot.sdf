@@ -1,0 +1,529 @@
+<sdf version='1.7'>
+  <model name='myCobot_280_PI_230708'>
+    <link name='base_link'>
+      <inertial>
+        <pose>0.002747 0.006582 0.04743 0 -0 0</pose>
+        <mass>0.623082</mass>
+        <inertia>
+          <ixx>0.000684</ixx>
+          <ixy>-3e-06</ixy>
+          <ixz>3e-06</ixz>
+          <iyy>0.000529</iyy>
+          <iyz>5e-06</iyz>
+          <izz>0.000974</izz>
+        </inertia>
+      </inertial>
+      <collision name='base_link_collision'>
+        <pose>0 0 0 0 -0 0</pose>
+        <geometry>
+          <mesh>
+            <scale>0.001 0.001 0.001</scale>
+            <uri>file://meshes/base_link.stl</uri>
+          </mesh>
+        </geometry>
+        <surface>
+          <contact>
+            <ode/>
+          </contact>
+          <friction>
+            <ode>
+              <mu>0.2</mu>
+              <mu2>0.2</mu2>
+            </ode>
+          </friction>
+        </surface>
+      </collision>
+      <visual name='base_link_visual'>
+        <pose>0 0 0 0 -0 0</pose>
+        <geometry>
+          <mesh>
+            <scale>0.001 0.001 0.001</scale>
+            <uri>file://meshes/base_link.stl</uri>
+          </mesh>
+        </geometry>
+        <material>
+          <script>
+            <name>Gazebo/Silver</name>
+            <uri>file://media/materials/scripts/gazebo.material</uri>
+          </script>
+        </material>
+      </visual>
+      <self_collide>1</self_collide>
+      <gravity>1</gravity>
+    </link>
+    <joint name='Revolute 11' type='revolute'>
+      <pose relative_to='base_link'>0.002418 0 0.072835 0 -0 0</pose>
+      <parent>base_link</parent>
+      <child>j1_1</child>
+      <axis>
+        <xyz>0 0 1</xyz>
+        <limit>
+          <lower>-1e+16</lower>
+          <upper>1e+16</upper>
+        </limit>
+        <dynamics>
+          <spring_reference>0</spring_reference>
+          <spring_stiffness>0</spring_stiffness>
+        </dynamics>
+      </axis>
+    </joint>
+    <link name='j1_1'>
+      <pose relative_to='Revolute 11'>0 0 0 0 -0 0</pose>
+      <inertial>
+        <pose>-0.00715 6e-06 0.038268 0 -0 0</pose>
+        <mass>0.335581</mass>
+        <inertia>
+          <ixx>0.000317</ixx>
+          <ixy>0</ixy>
+          <ixz>5.6e-05</ixz>
+          <iyy>0.000357</iyy>
+          <iyz>0</iyz>
+          <izz>0.000183</izz>
+        </inertia>
+      </inertial>
+      <collision name='j1_1_collision'>
+        <pose>-0.002418 0 -0.072835 0 -0 0</pose>
+        <geometry>
+          <mesh>
+            <scale>0.001 0.001 0.001</scale>
+            <uri>file://meshes/j1_1.stl</uri>
+          </mesh>
+        </geometry>
+        <surface>
+          <contact>
+            <ode/>
+          </contact>
+          <friction>
+            <ode>
+              <mu>0.2</mu>
+              <mu2>0.2</mu2>
+            </ode>
+          </friction>
+        </surface>
+      </collision>
+      <visual name='j1_1_visual'>
+        <pose>-0.002418 0 -0.072835 0 -0 0</pose>
+        <geometry>
+          <mesh>
+            <scale>0.001 0.001 0.001</scale>
+            <uri>file://meshes/j1_1.stl</uri>
+          </mesh>
+        </geometry>
+        <material>
+          <script>
+            <name>Gazebo/Silver</name>
+            <uri>file://media/materials/scripts/gazebo.material</uri>
+          </script>
+        </material>
+      </visual>
+      <self_collide>1</self_collide>
+    </link>
+    <joint name='Revolute 4' type='revolute'>
+      <pose relative_to='j1_1'>-0.034705 0 0.059705 0 -0 0</pose>
+      <parent>j1_1</parent>
+      <child>j2_1</child>
+      <axis>
+        <xyz>1 0 0</xyz>
+        <limit>
+          <lower>-1e+16</lower>
+          <upper>1e+16</upper>
+        </limit>
+        <dynamics>
+          <spring_reference>0</spring_reference>
+          <spring_stiffness>0</spring_stiffness>
+        </dynamics>
+      </axis>
+    </joint>
+    <link name='j2_1'>
+      <pose relative_to='Revolute 4'>0 0 0 0 -0 0</pose>
+      <inertial>
+        <pose>-0.023209 -1e-06 0.051618 0 -0 0</pose>
+        <mass>0.524558</mass>
+        <inertia>
+          <ixx>0.001311</ixx>
+          <ixy>0</ixy>
+          <ixz>-1e-06</ixz>
+          <iyy>0.001359</iyy>
+          <iyz>0</iyz>
+          <izz>0.000278</izz>
+        </inertia>
+      </inertial>
+      <collision name='j2_1_collision'>
+        <pose>0.032287 0 -0.13254 0 -0 0</pose>
+        <geometry>
+          <mesh>
+            <scale>0.001 0.001 0.001</scale>
+            <uri>file://meshes/j2_1.stl</uri>
+          </mesh>
+        </geometry>
+        <surface>
+          <contact>
+            <ode/>
+          </contact>
+          <friction>
+            <ode>
+              <mu>0.2</mu>
+              <mu2>0.2</mu2>
+            </ode>
+          </friction>
+        </surface>
+      </collision>
+      <visual name='j2_1_visual'>
+        <pose>0.032287 0 -0.13254 0 -0 0</pose>
+        <geometry>
+          <mesh>
+            <scale>0.001 0.001 0.001</scale>
+            <uri>file://meshes/j2_1.stl</uri>
+          </mesh>
+        </geometry>
+        <material>
+          <script>
+            <name>Gazebo/Silver</name>
+            <uri>file://media/materials/scripts/gazebo.material</uri>
+          </script>
+        </material>
+      </visual>
+      <self_collide>1</self_collide>
+    </link>
+    <joint name='Revolute 5' type='revolute'>
+      <pose relative_to='j2_1'>0.006776 0 0.11 0 -0 0</pose>
+      <parent>j2_1</parent>
+      <child>j3_1</child>
+      <axis>
+        <xyz>-1 0 0</xyz>
+        <limit>
+          <lower>-1e+16</lower>
+          <upper>1e+16</upper>
+        </limit>
+        <dynamics>
+          <spring_reference>0</spring_reference>
+          <spring_stiffness>0</spring_stiffness>
+        </dynamics>
+      </axis>
+    </joint>
+    <link name='j3_1'>
+      <pose relative_to='Revolute 5'>0 0 0 0 -0 0</pose>
+      <inertial>
+        <pose>0.02307 0 0.043197 0 -0 0</pose>
+        <mass>0.41531</mass>
+        <inertia>
+          <ixx>0.000783</ixx>
+          <ixy>0</ixy>
+          <ixz>-3.4e-05</ixz>
+          <iyy>0.000834</iyy>
+          <iyz>0</iyz>
+          <izz>0.000191</izz>
+        </inertia>
+      </inertial>
+      <collision name='j3_1_collision'>
+        <pose>0.025511 0 -0.24254 0 -0 0</pose>
+        <geometry>
+          <mesh>
+            <scale>0.001 0.001 0.001</scale>
+            <uri>file://meshes/j3_1.stl</uri>
+          </mesh>
+        </geometry>
+        <surface>
+          <contact>
+            <ode/>
+          </contact>
+          <friction>
+            <ode>
+              <mu>0.2</mu>
+              <mu2>0.2</mu2>
+            </ode>
+          </friction>
+        </surface>
+      </collision>
+      <visual name='j3_1_visual'>
+        <pose>0.025511 0 -0.24254 0 -0 0</pose>
+        <geometry>
+          <mesh>
+            <scale>0.001 0.001 0.001</scale>
+            <uri>file://meshes/j3_1.stl</uri>
+          </mesh>
+        </geometry>
+        <material>
+          <script>
+            <name>Gazebo/Silver</name>
+            <uri>file://media/materials/scripts/gazebo.material</uri>
+          </script>
+        </material>
+      </visual>
+      <self_collide>1</self_collide>
+    </link>
+    <joint name='Revolute 6' type='revolute'>
+      <pose relative_to='j3_1'>-0.001444 0 0.096 0 -0 0</pose>
+      <parent>j3_1</parent>
+      <child>j4_1</child>
+      <axis>
+        <xyz>1 0 0</xyz>
+        <limit>
+          <lower>-1e+16</lower>
+          <upper>1e+16</upper>
+        </limit>
+        <dynamics>
+          <spring_reference>0</spring_reference>
+          <spring_stiffness>0</spring_stiffness>
+        </dynamics>
+      </axis>
+    </joint>
+    <link name='j4_1'>
+      <pose relative_to='Revolute 6'>0 0 0 0 -0 0</pose>
+      <inertial>
+        <pose>-0.022733 -3e-06 0.007679 0 -0 0</pose>
+        <mass>0.189013</mass>
+        <inertia>
+          <ixx>7.1e-05</ixx>
+          <ixy>0</ixy>
+          <ixz>1.7e-05</ixz>
+          <iyy>9.1e-05</iyy>
+          <iyz>0</iyz>
+          <izz>6.9e-05</izz>
+        </inertia>
+      </inertial>
+      <collision name='j4_1_collision'>
+        <pose>0.026955 0 -0.33854 0 -0 0</pose>
+        <geometry>
+          <mesh>
+            <scale>0.001 0.001 0.001</scale>
+            <uri>file://meshes/j4_1.stl</uri>
+          </mesh>
+        </geometry>
+        <surface>
+          <contact>
+            <ode/>
+          </contact>
+          <friction>
+            <ode>
+              <mu>0.2</mu>
+              <mu2>0.2</mu2>
+            </ode>
+          </friction>
+        </surface>
+      </collision>
+      <visual name='j4_1_visual'>
+        <pose>0.026955 0 -0.33854 0 -0 0</pose>
+        <geometry>
+          <mesh>
+            <scale>0.001 0.001 0.001</scale>
+            <uri>file://meshes/j4_1.stl</uri>
+          </mesh>
+        </geometry>
+        <material>
+          <script>
+            <name>Gazebo/Silver</name>
+            <uri>file://media/materials/scripts/gazebo.material</uri>
+          </script>
+        </material>
+      </visual>
+      <self_collide>1</self_collide>
+    </link>
+    <joint name='Revolute 7' type='revolute'>
+      <pose relative_to='j4_1'>-0.033245 0 0.03483 0 -0 0</pose>
+      <parent>j4_1</parent>
+      <child>j5_1</child>
+      <axis>
+        <xyz>0 0 1</xyz>
+        <limit>
+          <lower>-1e+16</lower>
+          <upper>1e+16</upper>
+        </limit>
+        <dynamics>
+          <spring_reference>0</spring_reference>
+          <spring_stiffness>0</spring_stiffness>
+        </dynamics>
+      </axis>
+    </joint>
+    <link name='j5_1'>
+      <pose relative_to='Revolute 7'>0 0 0 0 -0 0</pose>
+      <inertial>
+        <pose>-0.000108 -0.002887 0.027643 0 -0 0</pose>
+        <mass>0.226476</mass>
+        <inertia>
+          <ixx>0.000144</ixx>
+          <ixy>0</ixy>
+          <ixz>1e-06</ixz>
+          <iyy>0.00011</iyy>
+          <iyz>9e-06</iyz>
+          <izz>9.8e-05</izz>
+        </inertia>
+      </inertial>
+      <collision name='j5_1_collision'>
+        <pose>0.0602 0 -0.37337 0 -0 0</pose>
+        <geometry>
+          <mesh>
+            <scale>0.001 0.001 0.001</scale>
+            <uri>file://meshes/j5_1.stl</uri>
+          </mesh>
+        </geometry>
+        <surface>
+          <contact>
+            <ode/>
+          </contact>
+          <friction>
+            <ode>
+              <mu>0.2</mu>
+              <mu2>0.2</mu2>
+            </ode>
+          </friction>
+        </surface>
+      </collision>
+      <visual name='j5_1_visual'>
+        <pose>0.0602 0 -0.37337 0 -0 0</pose>
+        <geometry>
+          <mesh>
+            <scale>0.001 0.001 0.001</scale>
+            <uri>file://./meshes/j5_1.stl</uri>
+          </mesh>
+        </geometry>
+        <material>
+          <script>
+            <name>Gazebo/Silver</name>
+            <uri>file://media/materials/scripts/gazebo.material</uri>
+          </script>
+        </material>
+      </visual>
+      <self_collide>1</self_collide>
+    </link>
+    <joint name='Revolute 9' type='revolute'>
+      <pose relative_to='j5_1'>0 -0.031671 0.039625 0 -0 0</pose>
+      <parent>j5_1</parent>
+      <child>j6_1</child>
+      <axis>
+        <xyz>0 1 0</xyz>
+        <limit>
+          <lower>-1e+16</lower>
+          <upper>1e+16</upper>
+        </limit>
+        <dynamics>
+          <spring_reference>0</spring_reference>
+          <spring_stiffness>0</spring_stiffness>
+        </dynamics>
+      </axis>
+    </joint>
+    <link name='j6_1'>
+      <pose relative_to='Revolute 9'>0 0 0 0 -0 0</pose>
+      <inertial>
+        <pose>0.000293 -0.03302 0.000815 0 -0 0</pose>
+        <mass>1.06304</mass>
+        <inertia>
+          <ixx>0.00132754</ixx>
+          <ixy>-7.51882e-07</ixy>
+          <ixz>-1.61557e-05</ixz>
+          <iyy>0.00177849</iyy>
+          <iyz>-5.28285e-07</iyz>
+          <izz>0.00060916</izz>
+        </inertia>
+      </inertial>
+      <collision name='j6_1_collision'>
+        <pose>0.0602 0.031671 -0.412995 0 -0 0</pose>
+        <geometry>
+          <mesh>
+            <scale>0.001 0.001 0.001</scale>
+            <uri>file://meshes/j6_1.stl</uri>
+          </mesh>
+        </geometry>
+        <surface>
+          <contact>
+            <ode/>
+          </contact>
+          <friction>
+            <ode>
+              <mu>0.2</mu>
+              <mu2>0.2</mu2>
+            </ode>
+          </friction>
+        </surface>
+      </collision>
+      <collision name='j6_1_fixed_joint_lump__grip_phone_v1_1_collision_1'>
+        <pose>0.0602 0.031671 -0.412995 0 -0 0</pose>
+        <geometry>
+          <mesh>
+            <scale>0.001 0.001 0.001</scale>
+            <uri>file://meshes/grip_phone_v1_1.stl</uri>
+          </mesh>
+        </geometry>
+        <surface>
+          <contact>
+            <ode/>
+          </contact>
+          <friction>
+            <ode>
+              <mu>0.2</mu>
+              <mu2>0.2</mu2>
+            </ode>
+          </friction>
+        </surface>
+      </collision>
+      <collision name='j6_1_fixed_joint_lump__iPhone17_v1_1_collision_2'>
+        <pose>0.0602 0.031671 -0.412995 0 -0 0</pose>
+        <geometry>
+          <mesh>
+            <scale>0.001 0.001 0.001</scale>
+            <uri>file://meshes/iPhone17_v1_1.stl</uri>
+          </mesh>
+        </geometry>
+        <surface>
+          <contact>
+            <ode/>
+          </contact>
+          <friction>
+            <ode>
+              <mu>0.2</mu>
+              <mu2>0.2</mu2>
+            </ode>
+          </friction>
+        </surface>
+      </collision>
+      <visual name='j6_1_visual'>
+        <pose>0.0602 0.031671 -0.412995 0 -0 0</pose>
+        <geometry>
+          <mesh>
+            <scale>0.001 0.001 0.001</scale>
+            <uri>file://meshes/j6_1.stl</uri>
+          </mesh>
+        </geometry>
+        <material>
+          <script>
+            <name>Gazebo/Silver</name>
+            <uri>file://media/materials/scripts/gazebo.material</uri>
+          </script>
+        </material>
+      </visual>
+      <visual name='j6_1_fixed_joint_lump__grip_phone_v1_1_visual_1'>
+        <pose>0.0602 0.031671 -0.412995 0 -0 0</pose>
+        <geometry>
+          <mesh>
+            <scale>0.001 0.001 0.001</scale>
+            <uri>file://meshes/grip_phone_v1_1.stl</uri>
+          </mesh>
+        </geometry>
+        <material>
+          <script>
+            <name>Gazebo/Silver</name>
+            <uri>file://media/materials/scripts/gazebo.material</uri>
+          </script>
+        </material>
+      </visual>
+      <visual name='j6_1_fixed_joint_lump__iPhone17_v1_1_visual_2'>
+        <pose>0.0602 0.031671 -0.412995 0 -0 0</pose>
+        <geometry>
+          <mesh>
+            <scale>0.001 0.001 0.001</scale>
+            <uri>file://meshes/iPhone17_v1_1.stl</uri>
+          </mesh>
+        </geometry>
+        <material>
+          <script>
+            <name>Gazebo/Silver</name>
+            <uri>file://media/materials/scripts/gazebo.material</uri>
+          </script>
+        </material>
+      </visual>
+      <self_collide>1</self_collide>
+      <self_collide>1</self_collide>
+      <self_collide>1</self_collide>
+    </link>
+  </model>
+</sdf>
