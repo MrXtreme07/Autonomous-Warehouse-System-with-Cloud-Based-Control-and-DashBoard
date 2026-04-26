@@ -18,7 +18,7 @@
             <visual name="base_link_visual">
                 <geometry>
                     <mesh>
-                        <uri>model://(Unsaved)/meshes/base_link.stl</uri>
+                        <uri>model://(Unsaved)/meshes/base_l.stl</uri>
                         <scale>0.001 0.001 0.001</scale>
                     </mesh>
                 </geometry>
@@ -26,7 +26,7 @@
             <collision name="base_link_collision">
                 <geometry>
                     <mesh>
-                        <uri>model://(Unsaved)/meshes/base_link.stl</uri>
+                        <uri>model://(Unsaved)/meshes/base_l.stl</uri>
                         <scale>0.001 0.001 0.001</scale>
                     </mesh>
                 </geometry>

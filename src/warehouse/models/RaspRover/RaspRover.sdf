@@ -16,6 +16,444 @@
       <background>0.7 0.7 0.7 1</background>
       <shadows>true</shadows>
     </scene>
+    <model name='RaspRover_Real'>
+      <link name='base_link'>
+        <pose>0.076216 0.034819 0.050736 0 -0 1.5708</pose>
+        <inertial>
+          <mass>0.80900899999999998</mass>
+          <pose>-0.035167 0.07585 -0.023256 0 -0 0</pose>
+          <inertia>
+            <ixx>0.00148347</ixx>
+            <iyy>0.0028089899999999999</iyy>
+            <izz>0.0036084699999999999</izz>
+            <ixy>2.9088699999999998e-06</ixy>
+            <iyz>7.1253399999999996e-06</iyz>
+            <ixz>1.4849200000000001e-06</ixz>
+          </inertia>
+        </inertial>
+        <visual name='base_link_visual'>
+          <geometry>
+            <mesh>
+              <uri>file://meshes/base_l.stl</uri>
+              <scale>0.001 0.001 0.001</scale>
+            </mesh>
+          </geometry>
+          <material>
+            <ambient>0.2 0.8 0.8 1</ambient>
+            <diffuse>0.2 0.8 0.8 1</diffuse>
+            <specular>0.5 0.5 0.2 1</specular>
+          </material>
+        </visual>
+        <collision name='base_link_collision'>
+          <geometry>
+            <mesh>
+              <uri>file://meshes/base_l.stl</uri>
+              <scale>0.001 0.001 0.001</scale>
+            </mesh>
+          </geometry>
+        </collision>
+        <enable_wind>false</enable_wind>
+      </link>
+      <link name='3'>
+        <pose>0.252468 -0.146763 0.093736 -0 -0 1.5708</pose>
+        <inertial>
+          <mass>4.1853800000000003</mass>
+          <pose>0.14019 0.252662 -0.044405 0 -0 0</pose>
+          <inertia>
+            <ixx>0.00488361</ixx>
+            <iyy>0.0071313799999999997</iyy>
+            <izz>0.0057877400000000004</izz>
+            <ixy>-1.3996699999999999e-05</ixy>
+            <iyz>2.2071399999999998e-06</iyz>
+            <ixz>4.4642699999999999e-05</ixz>
+          </inertia>
+        </inertial>
+        <visual name='3_visual'>
+          <geometry>
+            <mesh>
+              <uri>file://meshes/3.stl</uri>
+              <scale>0.001 0.001 0.001</scale>
+            </mesh>
+          </geometry>
+          <material>
+            <ambient>0 0 0 1</ambient>
+            <diffuse>0 0 0 1</diffuse>
+            <specular>0.5 0.5 0.2 1</specular>
+          </material>
+        </visual>
+        <collision name='3_collision'>
+          <geometry>
+            <mesh>
+              <uri>file://meshes/3.stl</uri>
+              <scale>0.001 0.001 0.001</scale>
+            </mesh>
+          </geometry>
+        </collision>
+        <enable_wind>false</enable_wind>
+      </link>
+      <link name='2'>
+        <pose>0.0408 -0.048498 -0.001 3.14159 1.57079 3.14159</pose>
+        <inertial>
+          <mass>0.39017299999999999</mass>
+          <pose>0 0 0.019263 0 -0 0</pose>
+          <inertia>
+            <ixx>0.000255994</ixx>
+            <iyy>0.00025599299999999999</iyy>
+            <izz>0.00038341999999999998</izz>
+            <ixy>8.1328500000000005e-10</ixy>
+            <iyz>-2.2683000000000001e-10</iyz>
+            <ixz>-1.96214e-10</ixz>
+          </inertia>
+        </inertial>
+        <visual name='2_visual'>
+          <geometry>
+            <mesh>
+              <uri>file://meshes/2.stl</uri>
+              <scale>0.001 0.001 0.001</scale>
+            </mesh>
+          </geometry>
+          <material>
+            <ambient>0 0 0 1</ambient>
+            <diffuse>0 0 0 1</diffuse>
+            <specular>0.5 0.5 0.2 1</specular>
+          </material>
+        </visual>
+        <collision name='2_collision'>
+          <geometry>
+            <mesh>
+              <uri>file://meshes/2.stl</uri>
+              <scale>0.001 0.001 0.001</scale>
+            </mesh>
+          </geometry>
+        </collision>
+        <enable_wind>false</enable_wind>
+      </link>
+      <link name='5'>
+        <pose>-0.0408 0.048498 -0.001 2e-06 1.57079 3.14159</pose>
+        <inertial>
+          <mass>0.39017299999999999</mass>
+          <pose>0 0 0.019263 0 -0 0</pose>
+          <inertia>
+            <ixx>0.000255994</ixx>
+            <iyy>0.00025599299999999999</iyy>
+            <izz>0.00038341999999999998</izz>
+            <ixy>8.1328500000000005e-10</ixy>
+            <iyz>-2.2683000000000001e-10</iyz>
+            <ixz>-1.96214e-10</ixz>
+          </inertia>
+        </inertial>
+        <visual name='5_visual'>
+          <geometry>
+            <mesh>
+              <uri>file://meshes/5.stl</uri>
+              <scale>0.001 0.001 0.001</scale>
+            </mesh>
+          </geometry>
+          <material>
+            <ambient>0 0 0 1</ambient>
+            <diffuse>0 0 0 1</diffuse>
+            <specular>0.5 0.5 0.2 1</specular>
+          </material>
+        </visual>
+        <collision name='5_collision'>
+          <geometry>
+            <mesh>
+              <uri>file://meshes/5.stl</uri>
+              <scale>0.001 0.001 0.001</scale>
+            </mesh>
+          </geometry>
+        </collision>
+        <enable_wind>false</enable_wind>
+      </link>
+      <link name='6'>
+        <pose>-0.0408 -0.048498 -0.001 2e-06 1.57079 3.14159</pose>
+        <inertial>
+          <mass>0.39017299999999999</mass>
+          <pose>0 0 0.019263 0 -0 0</pose>
+          <inertia>
+            <ixx>0.000255994</ixx>
+            <iyy>0.00025599299999999999</iyy>
+            <izz>0.00038341999999999998</izz>
+            <ixy>8.1328500000000005e-10</ixy>
+            <iyz>-2.2683000000000001e-10</iyz>
+            <ixz>-1.96214e-10</ixz>
+          </inertia>
+        </inertial>
+        <visual name='6_visual'>
+          <material>
+            <ambient>0 0 0 1</ambient>
+            <diffuse>0 0 0 1</diffuse>
+            <specular>0.5 0.5 0.2 1</specular>
+          </material>
+          <geometry>
+            <mesh>
+              <uri>file://meshes/6.stl</uri>
+              <scale>0.001 0.001 0.001</scale>
+            </mesh>
+          </geometry>
+        </visual>
+        <collision name='6_collision'>
+          <geometry>
+            <mesh>
+              <uri>file://meshes/6.stl</uri>
+              <scale>0.001 0.001 0.001</scale>
+            </mesh>
+          </geometry>
+        </collision>
+        <enable_wind>false</enable_wind>
+      </link>
+      <link name='7'>
+        <pose>0.0408 0.048498 -0.001 3.14159 1.57079 3.14159</pose>
+        <inertial>
+          <mass>0.39017299999999999</mass>
+          <pose>0 0 0.019263 0 -0 0</pose>
+          <inertia>
+            <ixx>0.000255994</ixx>
+            <iyy>0.00025599299999999999</iyy>
+            <izz>0.00038341999999999998</izz>
+            <ixy>8.1328500000000005e-10</ixy>
+            <iyz>-2.2683000000000001e-10</iyz>
+            <ixz>-1.96214e-10</ixz>
+          </inertia>
+        </inertial>
+        <visual name='7_visual'>
+          <geometry>
+            <mesh>
+              <uri>file://meshes/7.stl</uri>
+              <scale>0.001 0.001 0.001</scale>
+            </mesh>
+          </geometry>
+          <material>
+            <ambient>0.0 0.0 0.0 1</ambient>
+            <diffuse>0.0 0.0 0.0 1</diffuse>
+            <specular>0.5 0.5 0.2 1</specular>
+          </material>
+        </visual>
+        <collision name='7_collision'>
+          <geometry>
+            <mesh>
+              <uri>file://meshes/7.stl</uri>
+              <scale>0.001 0.001 0.001</scale>
+            </mesh>
+          </geometry>
+        </collision>
+        <enable_wind>false</enable_wind>
+      </link>
+      <link name='rpiCameraM-1'>
+        <pose>-0 -0.066522 0.103241 3.13736 -0 0</pose>
+        <inertial>
+          <mass>0.085319999999999993</mass>
+          <pose>0 -0.004659 -0.000119 0 -0 0</pose>
+          <inertia>
+            <ixx>9.32314e-06</ixx>
+            <iyy>7.16517e-06</iyy>
+            <izz>8.7972299999999998e-06</izz>
+            <ixy>2.3629600000000002e-10</ixy>
+            <iyz>7.9627899999999995e-07</iyz>
+            <ixz>-2.80727e-10</ixz>
+          </inertia>
+        </inertial>
+        <visual name='rpiCameraM-1_visual'>
+          <geometry>
+            <mesh>
+              <uri>file://meshes/rpiCameraM-1.stl</uri>
+              <scale>0.001 0.001 0.001</scale>
+            </mesh>
+          </geometry>
+          <material>
+            <ambient>0 0 0 1</ambient>
+            <diffuse>0 0 0 1</diffuse>
+            <specular>0.5 0.5 0.2 1</specular>
+          </material>
+        </visual>
+        <collision name='rpiCameraM-1_collision'>
+          <geometry>
+            <mesh>
+              <uri>file://meshes/rpiCameraM-1.stl</uri>
+              <scale>0.001 0.001 0.001</scale>
+            </mesh>
+          </geometry>
+        </collision>
+        <enable_wind>false</enable_wind>
+      </link>
+      <link name='8'>
+        <pose>0 -0.00047 -0.015276 -0.004239 0 -0</pose>
+        <inertial>
+          <mass>0.041121699999999997</mass>
+          <pose>0 -0.058019 0.118236 0 -0 0</pose>
+          <inertia>
+            <ixx>1.5027e-06</ixx>
+            <iyy>2.72846e-06</iyy>
+            <izz>2.6890899999999999e-06</izz>
+            <ixy>-2.0718099999999999e-23</ixy>
+            <iyz>-1.08829e-19</iyz>
+            <ixz>1.01902e-19</ixz>
+          </inertia>
+        </inertial>
+        <visual name='8_visual'>
+          <geometry>
+            <mesh>
+              <uri>file://meshes/8.stl</uri>
+              <scale>0.001 0.001 0.001</scale>
+            </mesh>
+          </geometry>
+          <material>
+            <ambient>0.2 0.8 0.8 1</ambient>
+            <diffuse>0.2 0.8 0.8 1</diffuse>
+            <specular>0.5 0.5 0.2 1</specular>
+          </material>
+        </visual>
+        <collision name='8_collision'>
+          <geometry>
+            <mesh>
+              <uri>file://meshes/8.stl</uri>
+              <scale>0.001 0.001 0.001</scale>
+            </mesh>
+          </geometry>
+        </collision>
+        <enable_wind>false</enable_wind>
+      </link>
+      <joint name='base_link_Rigid-5' type='fixed'>
+        <pose>0.146763 0.252468 -0.093736 0 -0 0</pose>
+        <parent>base_link</parent>
+        <child>3</child>
+      </joint>
+      <joint name='base_link_Revolute-6' type='revolute'>
+        <pose>0 -0 0 0 -0 0</pose>
+        <parent>base_link</parent>
+        <child>5</child>
+        <axis>
+          <xyz>-0 -0 1</xyz>
+          <limit>
+            <lower>-10000000000000000</lower>
+            <upper>10000000000000000</upper>
+            <effort>inf</effort>
+            <velocity>inf</velocity>
+            <stiffness>100000000</stiffness>
+            <dissipation>1</dissipation>
+          </limit>
+          <dynamics>
+            <spring_reference>0</spring_reference>
+            <spring_stiffness>0</spring_stiffness>
+            <damping>0</damping>
+            <friction>0</friction>
+          </dynamics>
+        </axis>
+      </joint>
+      <joint name='base_link_Revolute-7' type='revolute'>
+        <pose>0 0 0 0 -0 0</pose>
+        <parent>base_link</parent>
+        <child>6</child>
+        <axis>
+          <xyz>-0 -0 1</xyz>
+          <limit>
+            <lower>-10000000000000000</lower>
+            <upper>10000000000000000</upper>
+            <effort>inf</effort>
+            <velocity>inf</velocity>
+            <stiffness>100000000</stiffness>
+            <dissipation>1</dissipation>
+          </limit>
+          <dynamics>
+            <spring_reference>0</spring_reference>
+            <spring_stiffness>0</spring_stiffness>
+            <damping>0</damping>
+            <friction>0</friction>
+          </dynamics>
+        </axis>
+      </joint>
+      <joint name='base_link_Revolute-8' type='revolute'>
+        <pose>-0 0 0 0 -0 0</pose>
+        <parent>base_link</parent>
+        <child>2</child>
+        <axis>
+          <xyz>0 0 1</xyz>
+          <limit>
+            <lower>-10000000000000000</lower>
+            <upper>10000000000000000</upper>
+            <effort>inf</effort>
+            <velocity>inf</velocity>
+            <stiffness>100000000</stiffness>
+            <dissipation>1</dissipation>
+          </limit>
+          <dynamics>
+            <spring_reference>0</spring_reference>
+            <spring_stiffness>0</spring_stiffness>
+            <damping>0</damping>
+            <friction>0</friction>
+          </dynamics>
+        </axis>
+      </joint>
+      <joint name='base_link_Revolute-9' type='revolute'>
+        <pose>-0 0 0 0 -0 0</pose>
+        <parent>base_link</parent>
+        <child>7</child>
+        <axis>
+          <xyz>0 0 1</xyz>
+          <limit>
+            <lower>-10000000000000000</lower>
+            <upper>10000000000000000</upper>
+            <effort>inf</effort>
+            <velocity>inf</velocity>
+            <stiffness>100000000</stiffness>
+            <dissipation>1</dissipation>
+          </limit>
+          <dynamics>
+            <spring_reference>0</spring_reference>
+            <spring_stiffness>0</spring_stiffness>
+            <damping>0</damping>
+            <friction>0</friction>
+          </dynamics>
+        </axis>
+      </joint>
+      <joint name='3_Revolute-10' type='revolute'>
+        <pose>0 -0.065325 0.110736 0 -0 0</pose>
+        <parent>3</parent>
+        <child>8</child>
+        <axis>
+          <xyz>-1 0 0</xyz>
+          <limit>
+            <lower>-1.0471999999999999</lower>
+            <upper>0.436332</upper>
+            <effort>inf</effort>
+            <velocity>inf</velocity>
+            <stiffness>100000000</stiffness>
+            <dissipation>1</dissipation>
+          </limit>
+          <dynamics>
+            <spring_reference>0</spring_reference>
+            <spring_stiffness>0</spring_stiffness>
+            <damping>0</damping>
+            <friction>0</friction>
+          </dynamics>
+        </axis>
+      </joint>
+      <joint name='8_Revolute-11' type='revolute'>
+        <pose>0 -0.001229 -0 0 -0 0</pose>
+        <parent>8</parent>
+        <child>rpiCameraM-1</child>
+        <axis>
+          <xyz>0 1 0</xyz>
+          <limit>
+            <lower>-10000000000000000</lower>
+            <upper>10000000000000000</upper>
+            <effort>inf</effort>
+            <velocity>inf</velocity>
+            <stiffness>100000000</stiffness>
+            <dissipation>1</dissipation>
+          </limit>
+          <dynamics>
+            <spring_reference>0</spring_reference>
+            <spring_stiffness>0</spring_stiffness>
+            <damping>0</damping>
+            <friction>0</friction>
+          </dynamics>
+        </axis>
+      </joint>
+      <pose>-0.317872 -0 0.038276 0 0 -0</pose>
+      <static>false</static>
+      <self_collide>false</self_collide>
+    </model>
     <model name='ground_plane'>
       <static>true</static>
       <link name='link'>
@@ -83,20 +521,20 @@
         <visual name='Frame_visual'>
           <geometry>
             <mesh>
-              <uri>file://./meshes/Frame.stl</uri>
+              <uri>file://meshes/Frame.stl</uri>
               <scale>0.001 0.001 0.001</scale>
             </mesh>
           </geometry>
-            <material>
-                <ambient>0.2 0.8 0.8 1</ambient>
-                <diffuse>0.2 0.8 0.8 1</diffuse>
-                <specular>0.5 0.5 0.2 1</specular>
-            </material>
+          <material>
+            <ambient>0.2 0.8 0.8 1</ambient>
+            <diffuse>0.2 0.8 0.8 1</diffuse>
+            <specular>0.5 0.5 0.2 1</specular>
+          </material>
         </visual>
         <collision name='Frame_collision'>
           <geometry>
             <mesh>
-              <uri>file://./meshes/Frame.stl</uri>
+              <uri>file://meshes/Frame.stl</uri>
               <scale>0.001 0.001 0.001</scale>
             </mesh>
           </geometry>
@@ -104,7 +542,7 @@
         <enable_wind>false</enable_wind>
       </link>
       <link name='Wheel_BR'>
-        <pose>0.0554 -0.328775 -0.077992 3.14159 0 0</pose>
+        <pose>0.0554 -0.327561 -0.075098 -3.11659 -0 0</pose>
         <inertial>
           <mass>0.64435100000000001</mass>
           <pose>-0.130401 0.115194 -0.050131 0 -0 0</pose>
@@ -120,20 +558,20 @@
         <visual name='Wheel_BR_visual'>
           <geometry>
             <mesh>
-              <uri>file://./meshes/Wheel_BR.stl</uri>
+              <uri>file://meshes/Wheel_BR.stl</uri>
               <scale>0.001 0.001 0.001</scale>
             </mesh>
           </geometry>
-            <material>
-                <ambient>0.0 0.0 0.0 1</ambient>
-                <diffuse>0.0 0.0 0.0 1</diffuse>
-                <specular>1.0 1.0 1.0 1</specular>
-            </material>
+          <material>
+            <ambient>0 0 0 1</ambient>
+            <diffuse>0 0 0 1</diffuse>
+            <specular>1 1 1 1</specular>
+          </material>
         </visual>
         <collision name='Wheel_BR_collision'>
           <geometry>
             <mesh>
-              <uri>file://./meshes/Wheel_BR.stl</uri>
+              <uri>file://meshes/Wheel_BR.stl</uri>
               <scale>0.001 0.001 0.001</scale>
             </mesh>
           </geometry>
@@ -141,7 +579,7 @@
         <enable_wind>false</enable_wind>
       </link>
       <link name='Wheel_BL'>
-        <pose>-0.0746 -0.328775 -0.077992 3.14159 -0 -0</pose>
+        <pose>-0.0746 -0.327561 -0.075098 -3.11659 -0 0</pose>
         <inertial>
           <mass>0.64435100000000001</mass>
           <pose>0.149599 0.115194 -0.050131 0 -0 0</pose>
@@ -157,20 +595,20 @@
         <visual name='Wheel_BL_visual'>
           <geometry>
             <mesh>
-              <uri>file://./meshes/Wheel_BL.stl</uri>
+              <uri>file://meshes/Wheel_BL.stl</uri>
               <scale>0.001 0.001 0.001</scale>
             </mesh>
           </geometry>
-            <material>
-                <ambient>0.0 0.0 0.0 1</ambient>
-                <diffuse>0.0 0.0 0.0 1</diffuse>
-                <specular>1.0 1.0 1.0 1</specular>
-            </material>
+          <material>
+            <ambient>0 0 0 1</ambient>
+            <diffuse>0 0 0 1</diffuse>
+            <specular>1 1 1 1</specular>
+          </material>
         </visual>
         <collision name='Wheel_BL_collision'>
           <geometry>
             <mesh>
-              <uri>file://./meshes/Wheel_BL.stl</uri>
+              <uri>file://meshes/Wheel_BL.stl</uri>
               <scale>0.001 0.001 0.001</scale>
             </mesh>
           </geometry>
@@ -178,7 +616,7 @@
         <enable_wind>false</enable_wind>
       </link>
       <link name='Wheel_FR'>
-        <pose>0.0554 -0.389575 -0.077992 -3.14159 -0 0</pose>
+        <pose>0.0554 -0.388302 -0.079847 -3.11659 0 -0</pose>
         <inertial>
           <mass>0.64435100000000001</mass>
           <pose>-0.130401 -0.074806 -0.050131 0 -0 0</pose>
@@ -194,20 +632,20 @@
         <visual name='Wheel_FR_visual'>
           <geometry>
             <mesh>
-              <uri>file://./meshes/Wheel_FR.stl</uri>
+              <uri>file://meshes/Wheel_FR.stl</uri>
               <scale>0.001 0.001 0.001</scale>
             </mesh>
           </geometry>
-            <material>
-                <ambient>0.0 0.0 0.0 1</ambient>
-                <diffuse>0.0 0.0 0.0 1</diffuse>
-                <specular>1.0 1.0 1.0 1</specular>
-            </material>
+          <material>
+            <ambient>0 0 0 1</ambient>
+            <diffuse>0 0 0 1</diffuse>
+            <specular>1 1 1 1</specular>
+          </material>
         </visual>
         <collision name='Wheel_FR_collision'>
           <geometry>
             <mesh>
-              <uri>file://./meshes/Wheel_FR.stl</uri>
+              <uri>file://meshes/Wheel_FR.stl</uri>
               <scale>0.001 0.001 0.001</scale>
             </mesh>
           </geometry>
@@ -215,7 +653,7 @@
         <enable_wind>false</enable_wind>
       </link>
       <link name='Wheel_FL'>
-        <pose>-0.0746 -0.389575 -0.077992 -3.14159 -0 0</pose>
+        <pose>-0.0746 -0.388302 -0.079847 -3.11659 0 0</pose>
         <inertial>
           <mass>0.64435100000000001</mass>
           <pose>0.149599 -0.074806 -0.050131 0 -0 0</pose>
@@ -231,20 +669,20 @@
         <visual name='Wheel_FL_visual'>
           <geometry>
             <mesh>
-              <uri>file://./meshes/Wheel_FL.stl</uri>
+              <uri>file://meshes/Wheel_FL.stl</uri>
               <scale>0.001 0.001 0.001</scale>
             </mesh>
           </geometry>
-            <material>
-                <ambient>0.0 0.0 0.0 1</ambient>
-                <diffuse>0.0 0.0 0.0 1</diffuse>
-                <specular>1.0 1.0 1.0 1</specular>
-            </material>
+          <material>
+            <ambient>0 0 0 1</ambient>
+            <diffuse>0 0 0 1</diffuse>
+            <specular>1 1 1 1</specular>
+          </material>
         </visual>
         <collision name='Wheel_FL_collision'>
           <geometry>
             <mesh>
-              <uri>file://./meshes/Wheel_FL.stl</uri>
+              <uri>file://meshes/Wheel_FL.stl</uri>
               <scale>0.001 0.001 0.001</scale>
             </mesh>
           </geometry>
@@ -252,10 +690,10 @@
         <enable_wind>false</enable_wind>
       </link>
       <link name='Camera_Pitch'>
-        <pose>-0.001603 -0.388495 -0.078208 -3.09531 0 -0.173333</pose>
+        <pose>-0.001644 -0.388728 -0.078219 -3.09413 0 -0.173314</pose>
         <inertial>
           <mass>0.052130599999999999</mass>
-          <pose>-0 2e-06 0.200062 0 -0 0</pose>
+          <pose>0 2e-06 0.200062 0 -0 0</pose>
           <inertia>
             <ixx>2.9160199999999998e-06</ixx>
             <iyy>2.8170899999999998e-06</iyy>
@@ -268,20 +706,20 @@
         <visual name='Camera_Pitch_visual'>
           <geometry>
             <mesh>
-              <uri>file://./meshes/Camera_Pitch.stl</uri>
+              <uri>file://meshes/Camera_Pitch.stl</uri>
               <scale>0.001 0.001 0.001</scale>
             </mesh>
           </geometry>
-            <material>
-                <ambient>0.5 0.8 0.2 1</ambient>
-                <diffuse>0.5 0.8 0.2 1</diffuse>
-                <specular>0.5 0.5 0.5 1</specular>
-            </material>
+          <material>
+            <ambient>0.5 0.8 0.2 1</ambient>
+            <diffuse>0.5 0.8 0.2 1</diffuse>
+            <specular>0.5 0.5 0.5 1</specular>
+          </material>
         </visual>
         <collision name='Camera_Pitch_collision'>
           <geometry>
             <mesh>
-              <uri>file://./meshes/Camera_Pitch.stl</uri>
+              <uri>file://meshes/Camera_Pitch.stl</uri>
               <scale>0.001 0.001 0.001</scale>
             </mesh>
           </geometry>
@@ -289,10 +727,10 @@
         <enable_wind>false</enable_wind>
       </link>
       <link name='Camera_Yaw'>
-        <pose>0 -0.379335 -0.077992 3.14159 -0 -0.173333</pose>
+        <pose>0 -0.379335 -0.077992 3.14159 0 -0.173314</pose>
         <inertial>
           <mass>0.137903</mass>
-          <pose>-0 0.000169 0.167551 0 -0 0</pose>
+          <pose>0 0.000169 0.167551 0 -0 0</pose>
           <inertia>
             <ixx>3.8542599999999999e-05</ixx>
             <iyy>4.3745000000000002e-05</iyy>
@@ -305,20 +743,20 @@
         <visual name='Camera_Yaw_visual'>
           <geometry>
             <mesh>
-              <uri>file://./meshes/Camera_Yaw.stl</uri>
+              <uri>file://meshes/Camera_Yaw.stl</uri>
               <scale>0.001 0.001 0.001</scale>
             </mesh>
           </geometry>
-            <material>
-                <ambient>0.1 0.1 0.8 1</ambient>
-                <diffuse>0.1 0.1 0.8 1</diffuse>
-                <specular>0.5 0.2 0.5 1</specular>
-            </material>
+          <material>
+            <ambient>0.1 0.1 0.8 1</ambient>
+            <diffuse>0.1 0.1 0.8 1</diffuse>
+            <specular>0.5 0.2 0.5 1</specular>
+          </material>
         </visual>
         <collision name='Camera_Yaw_collision'>
           <geometry>
             <mesh>
-              <uri>file://./meshes/Camera_Yaw.stl</uri>
+              <uri>file://meshes/Camera_Yaw.stl</uri>
               <scale>0.001 0.001 0.001</scale>
             </mesh>
           </geometry>
@@ -330,7 +768,7 @@
         <parent>Frame</parent>
         <child>Wheel_FR</child>
         <axis>
-          <xyz>1 0 -0</xyz>
+          <xyz>1 0 0</xyz>
           <limit>
             <lower>-10000000000000000</lower>
             <upper>10000000000000000</upper>
@@ -352,7 +790,7 @@
         <parent>Frame</parent>
         <child>Wheel_FL</child>
         <axis>
-          <xyz>1 0 -0</xyz>
+          <xyz>1 0 0</xyz>
           <limit>
             <lower>-10000000000000000</lower>
             <upper>10000000000000000</upper>
@@ -374,7 +812,7 @@
         <parent>Frame</parent>
         <child>Wheel_BL</child>
         <axis>
-          <xyz>1 -0 0</xyz>
+          <xyz>1 0 0</xyz>
           <limit>
             <lower>-10000000000000000</lower>
             <upper>10000000000000000</upper>
@@ -396,7 +834,7 @@
         <parent>Frame</parent>
         <child>Wheel_BR</child>
         <axis>
-          <xyz>1 0 -0</xyz>
+          <xyz>1 0 0</xyz>
           <limit>
             <lower>-10000000000000000</lower>
             <upper>10000000000000000</upper>
@@ -414,11 +852,11 @@
         </axis>
       </joint>
       <joint name='Frame_Revolute-5' type='revolute'>
-        <pose>-0 -0 0.14 0 -0 0</pose>
+        <pose>-0 0 0.14 0 -0 0</pose>
         <parent>Frame</parent>
         <child>Camera_Yaw</child>
         <axis>
-          <xyz>-0 -0 1</xyz>
+          <xyz>0 0 1</xyz>
           <limit>
             <lower>-1.5708</lower>
             <upper>1.5708</upper>
@@ -436,11 +874,11 @@
         </axis>
       </joint>
       <joint name='Camera_Yaw_Revolute-6' type='revolute'>
-        <pose>0.012 -0 0.201 0 -0 0</pose>
+        <pose>0.012 0 0.201 0 -0 0</pose>
         <parent>Camera_Yaw</parent>
         <child>Camera_Pitch</child>
         <axis>
-          <xyz>1 -0 0</xyz>
+          <xyz>1 0 0</xyz>
           <limit>
             <lower>-1.0471999999999999</lower>
             <upper>0.52359900000000004</upper>
@@ -466,538 +904,567 @@
         <wheel_radius>0.04</wheel_radius>
         <topic>/cmd_vel</topic>
       </plugin>
-      <pose>-0 -5e-06 0.002008 -3.14159 0 -0</pose>
+      <pose>-0 -0.000152 0.002139 3.14129 -0 -0</pose>
       <static>false</static>
       <self_collide>false</self_collide>
     </model>
-    <model name='myCobot_280_PI'>
-        <link name='base_link'>
+    <model name='joints'>
+      <link name='shoulder'>
+        <pose>0 0.032123 0.051938 1.5708 -0 0</pose>
         <inertial>
-            <pose>0.002747 0.006582 0.04743 0 -0 0</pose>
-            <mass>0.623082</mass>
-            <inertia>
-            <ixx>0.000684</ixx>
-            <ixy>-3e-06</ixy>
-            <ixz>3e-06</ixz>
-            <iyy>0.000529</iyy>
-            <iyz>5e-06</iyz>
-            <izz>0.000974</izz>
-            </inertia>
+          <mass>0.89223600000000003</mass>
+          <pose>0.006107 0.06982 0.02453 0 -0 0</pose>
+          <inertia>
+            <ixx>0.00063692900000000005</ixx>
+            <iyy>0.00024207800000000001</iyy>
+            <izz>0.000714013</izz>
+            <ixy>-0.00014307799999999999</ixy>
+            <iyz>-1.82782e-13</iyz>
+            <ixz>2.1864799999999999e-13</ixz>
+          </inertia>
         </inertial>
-        <collision name='base_link_collision'>
-            <pose>0 0 0 0 -0 0</pose>
-            <geometry>
+        <visual name='shoulder_visual'>
+          <geometry>
             <mesh>
-                <scale>0.001 0.001 0.001</scale>
-                <uri>file://./meshes/base_link.stl</uri>
+              <uri>file://meshes/shoulder.stl</uri>
+              <scale>0.001 0.001 0.001</scale>
             </mesh>
-            </geometry>
-            <surface>
-            <contact>
-                <ode/>
-            </contact>
-            <friction>
-                <ode>
-                <mu>0.2</mu>
-                <mu2>0.2</mu2>
-                </ode>
-            </friction>
-            </surface>
+          </geometry>
+          <material>
+            <ambient>0.8 0.2 0.8 1</ambient>
+            <diffuse>0.8 0.2 0.8 1</diffuse>
+            <specular>0.5 0.5 0.2 1</specular>
+          </material>
+        </visual>
+        <collision name='shoulder_collision'>
+          <geometry>
+            <mesh>
+              <uri>file://meshes/shoulder.stl</uri>
+              <scale>0.001 0.001 0.001</scale>
+            </mesh>
+          </geometry>
         </collision>
+        <enable_wind>false</enable_wind>
+      </link>
+      <link name='elbow1'>
+        <pose>0.1 0.032161 0.331933 1.57101 -0 -3.14159</pose>
+        <inertial>
+          <mass>1.3454699999999999</mass>
+          <pose>0.035943 -0.13605 -0.02453 0 -0 0</pose>
+          <inertia>
+            <ixx>0.0020138700000000001</ixx>
+            <iyy>0.00038056400000000001</iyy>
+            <izz>0.0021456600000000002</izz>
+            <ixy>-1.9530399999999999e-12</ixy>
+            <iyz>-3.38013e-16</iyz>
+            <ixz>5.2711999999999998e-13</ixz>
+          </inertia>
+        </inertial>
+        <visual name='elbow1_visual'>
+          <geometry>
+            <mesh>
+              <uri>file://meshes/elbow1.stl</uri>
+              <scale>0.001 0.001 0.001</scale>
+            </mesh>
+          </geometry>
+          <material>
+            <ambient>0.8 0.2 0.8 1</ambient>
+            <diffuse>0.8 0.2 0.8 1</diffuse>
+            <specular>0.5 0.5 0.2 1</specular>
+          </material>
+        </visual>
+        <collision name='elbow1_collision'>
+          <geometry>
+            <mesh>
+              <uri>file://meshes/elbow1.stl</uri>
+              <scale>0.001 0.001 0.001</scale>
+            </mesh>
+          </geometry>
+        </collision>
+        <enable_wind>false</enable_wind>
+      </link>
+      <link name='elbow2'>
+        <pose>0.05 0.031977 0.531952 1.57138 -0 0</pose>
+        <inertial>
+          <mass>1.3454699999999999</mass>
+          <pose>-0.041927 -0.239877 0.02453 0 -0 0</pose>
+          <inertia>
+            <ixx>0.0020138700000000001</ixx>
+            <iyy>0.00038056400000000001</iyy>
+            <izz>0.0021456600000000002</izz>
+            <ixy>-1.9530399999999999e-12</ixy>
+            <iyz>-3.3831300000000002e-16</iyz>
+            <ixz>5.2711999999999998e-13</ixz>
+          </inertia>
+        </inertial>
+        <visual name='elbow2_visual'>
+          <geometry>
+            <mesh>
+              <uri>file://meshes/elbow2.stl</uri>
+              <scale>0.001 0.001 0.001</scale>
+            </mesh>
+          </geometry>
+          <material>
+            <ambient>0.8 0.2 0.8 1</ambient>
+            <diffuse>0.8 0.2 0.8 1</diffuse>
+            <specular>0.5 0.5 0.2 1</specular>
+          </material>
+        </visual>
+        <collision name='elbow2_collision'>
+          <geometry>
+            <mesh>
+              <uri>file://meshes/elbow2.stl</uri>
+              <scale>0.001 0.001 0.001</scale>
+            </mesh>
+          </geometry>
+        </collision>
+        <enable_wind>false</enable_wind>
+      </link>
+      <link name='wrist'>
+        <pose>0.09 0.032542 0.706907 -1.56956 -0 3.14159</pose>
+        <inertial>
+          <mass>0.56212899999999999</mass>
+          <pose>0.027531 0.357129 0.02453 0 -0 0</pose>
+          <inertia>
+            <ixx>0.00016124100000000001</ixx>
+            <iyy>0.00016124100000000001</iyy>
+            <izz>0.00021861800000000001</izz>
+            <ixy>-5.36332e-05</ixy>
+            <iyz>-1.5165100000000001e-13</iyz>
+            <ixz>1.5166800000000001e-13</ixz>
+          </inertia>
+        </inertial>
+        <visual name='wrist_visual'>
+          <geometry>
+            <mesh>
+              <uri>file://meshes/wrist.stl</uri>
+              <scale>0.001 0.001 0.001</scale>
+            </mesh>
+          </geometry>
+          <material>
+            <ambient>0.8 0.2 0.8 1</ambient>
+            <diffuse>0.8 0.2 0.8 1</diffuse>
+            <specular>0.5 0.5 0.2 1</specular>
+          </material>
+        </visual>
+        <collision name='wrist_collision'>
+          <geometry>
+            <mesh>
+              <uri>file://meshes/wrist.stl</uri>
+              <scale>0.001 0.001 0.001</scale>
+            </mesh>
+          </geometry>
+        </collision>
+        <enable_wind>false</enable_wind>
+      </link>
+      <link name='endeff'>
+        <pose>0.149954 0.132664 0.781783 3.14035 0 0.000369</pose>
+        <inertial>
+          <mass>0.86778999999999995</mass>
+          <pose>-0.07787 0.115884 0.374762 0 -0 0</pose>
+          <inertia>
+            <ixx>0.00048065</ixx>
+            <iyy>0.00026170499999999999</iyy>
+            <izz>0.00039769399999999998</izz>
+            <ixy>2.3478199999999999e-09</ixy>
+            <iyz>-3.8289299999999999e-05</iyz>
+            <ixz>7.6579099999999993e-09</ixz>
+          </inertia>
+        </inertial>
+        <visual name='endeff_visual'>
+          <geometry>
+            <mesh>
+              <uri>file://meshes/endeff.stl</uri>
+              <scale>0.001 0.001 0.001</scale>
+            </mesh>
+          </geometry>
+          <material>
+            <ambient>0.8 0.2 0.8 1</ambient>
+            <diffuse>0.8 0.2 0.8 1</diffuse>
+            <specular>0.5 0.5 0.2 1</specular>
+          </material>
+        </visual>
+        <collision name='endeff_collision'>
+          <geometry>
+            <mesh>
+              <uri>file://meshes/endeff.stl</uri>
+              <scale>0.001 0.001 0.001</scale>
+            </mesh>
+          </geometry>
+        </collision>
+        <enable_wind>false</enable_wind>
+      </link>
+      <link name='base_link'>
+        <pose>3e-06 0 0 -0 -0 0.000365</pose>
+        <inertial>
+          <mass>2.3872100000000001</mass>
+          <pose>3.7e-05 0.005654 0.03473 0 -0 0</pose>
+          <inertia>
+            <ixx>0.0018634599999999999</ixx>
+            <iyy>0.0017434</iyy>
+            <izz>0.0016067500000000001</izz>
+            <ixy>1.4751099999999999e-06</ixy>
+            <iyz>-9.4673399999999994e-06</iyz>
+            <ixz>1.2099400000000001e-06</ixz>
+          </inertia>
+        </inertial>
         <visual name='base_link_visual'>
-            <pose>0 0 0 0 -0 0</pose>
-            <geometry>
+          <geometry>
             <mesh>
-                <scale>0.001 0.001 0.001</scale>
-                <uri>file://./meshes/base_link.stl</uri>
+              <uri>file://meshes/base.stl</uri>
+              <scale>0.001 0.001 0.001</scale>
             </mesh>
-            </geometry>
-            <material>
-            <script>
-                <name>Gazebo/Silver</name>
-                <uri>file://media/materials/scripts/gazebo.material</uri>
-            </script>
-            </material>
+          </geometry>
+          <material>
+            <ambient>0.8 0.2 0.8 1</ambient>
+            <diffuse>0.8 0.2 0.8 1</diffuse>
+            <specular>0.5 0.5 0.2 1</specular>
+          </material>
         </visual>
-        <self_collide>1</self_collide>
-        <gravity>1</gravity>
-        </link>
-        <joint name='Revolute 11' type='revolute'>
-        <pose relative_to='base_link'>0.002418 0 0.072835 0 -0 0</pose>
+        <collision name='base_link_collision'>
+          <geometry>
+            <mesh>
+              <uri>file://meshes/base.stl</uri>
+              <scale>0.001 0.001 0.001</scale>
+            </mesh>
+          </geometry>
+        </collision>
+        <enable_wind>false</enable_wind>
+      </link>
+      <link name='Component46-v1'>
+        <pose>-0.006306 -0.062218 0.156553 0.001243 0.000121 -3.11882</pose>
+        <inertial>
+          <mass>0.052696</mass>
+          <pose>-0.092798 -0.202844 0.252122 0 -0 0</pose>
+          <inertia>
+            <ixx>4.6930900000000002e-06</ixx>
+            <iyy>2.55113e-06</iyy>
+            <izz>3.6803999999999999e-06</izz>
+            <ixy>4.35233e-09</ixy>
+            <iyz>7.2444499999999997e-11</iyz>
+            <ixz>9.0974000000000005e-09</ixz>
+          </inertia>
+        </inertial>
+        <visual name='Component46-v1_visual'>
+          <geometry>
+            <mesh>
+              <uri>file://meshes/Component46-v1.stl</uri>
+              <scale>0.001 0.001 0.001</scale>
+            </mesh>
+          </geometry>
+          <material>
+            <ambient>0.8 0.2 0.8 1</ambient>
+            <diffuse>0.8 0.2 0.8 1</diffuse>
+            <specular>0.5 0.5 0.2 1</specular>
+          </material>
+        </visual>
+        <collision name='Component46-v1_collision'>
+          <geometry>
+            <mesh>
+              <uri>file://meshes/Component46-v1.stl</uri>
+              <scale>0.001 0.001 0.001</scale>
+            </mesh>
+          </geometry>
+        </collision>
+        <enable_wind>false</enable_wind>
+      </link>
+      <link name='Component47-v1'>
+        <pose>0.0178 -0.058858 0.156552 0.001237 0.000177 3.11956</pose>
+        <inertial>
+          <mass>0.053148500000000001</mass>
+          <pose>-0.040151 -0.202472 0.252169 0 -0 0</pose>
+          <inertia>
+            <ixx>4.7224099999999997e-06</ixx>
+            <iyy>2.5687000000000001e-06</iyy>
+            <izz>3.6994000000000001e-06</izz>
+            <ixy>-4.3999600000000002e-09</ixy>
+            <iyz>4.3483399999999999e-11</iyz>
+            <ixz>-5.1396500000000001e-09</ixz>
+          </inertia>
+        </inertial>
+        <visual name='Component47-v1_visual'>
+          <geometry>
+            <mesh>
+              <uri>file://meshes/Component47-v1.stl</uri>
+              <scale>0.001 0.001 0.001</scale>
+            </mesh>
+          </geometry>
+          <material>
+            <ambient>0.8 0.2 0.8 1</ambient>
+            <diffuse>0.8 0.2 0.8 1</diffuse>
+            <specular>0.5 0.5 0.2 1</specular>
+          </material>
+        </visual>
+        <collision name='Component47-v1_collision'>
+          <geometry>
+            <mesh>
+              <uri>file://meshes/Component47-v1.stl</uri>
+              <scale>0.001 0.001 0.001</scale>
+            </mesh>
+          </geometry>
+        </collision>
+        <enable_wind>false</enable_wind>
+      </link>
+      <link name='Component49-v1'>
+        <pose>0.00512 -0.060658 0.148052 0.00124 0.000149 -3.14123</pose>
+        <inertial>
+          <mass>0.77099899999999999</mass>
+          <pose>-0.065944 -0.146983 0.267342 0 -0 0</pose>
+          <inertia>
+            <ixx>0.00033165400000000002</ixx>
+            <iyy>0.00028393199999999998</iyy>
+            <izz>0.00037760799999999998</izz>
+            <ixy>-3.0274599999999998e-07</ixy>
+            <iyz>-5.0883000000000001e-06</iyz>
+            <ixz>-1.90211e-05</ixz>
+          </inertia>
+        </inertial>
+        <visual name='Component49-v1_visual'>
+          <geometry>
+            <mesh>
+              <uri>file://meshes/Component49-v1.stl</uri>
+              <scale>0.001 0.001 0.001</scale>
+            </mesh>
+          </geometry>
+          <material>
+            <ambient>0.8 0.2 0.8 1</ambient>
+            <diffuse>0.8 0.2 0.8 1</diffuse>
+            <specular>0.5 0.5 0.2 1</specular>
+          </material>
+        </visual>
+        <collision name='Component49-v1_collision'>
+          <geometry>
+            <mesh>
+              <uri>file://meshes/Component49-v1.stl</uri>
+              <scale>0.001 0.001 0.001</scale>
+            </mesh>
+          </geometry>
+        </collision>
+        <enable_wind>false</enable_wind>
+      </link>
+      <link name='adapter-v1'>
+        <pose>0.200484 0.011318 0.68585 3.14035 -0.000149 0.000369</pose>
+        <inertial>
+          <mass>0.020902</mass>
+          <pose>-0.128399 -0.041841 0.273549 0 -0 0</pose>
+          <inertia>
+            <ixx>3.01336e-06</ixx>
+            <iyy>5.36657e-06</iyy>
+            <izz>3.0162200000000002e-06</izz>
+            <ixy>-2.4006999999999998e-10</ixy>
+            <iyz>1.4896499999999999e-09</iyz>
+            <ixz>6.5154399999999995e-13</ixz>
+          </inertia>
+        </inertial>
+        <visual name='adapter-v1_visual'>
+          <geometry>
+            <mesh>
+              <uri>file://meshes/adapter-v1.stl</uri>
+              <scale>0.001 0.001 0.001</scale>
+            </mesh>
+          </geometry>
+          <material>
+            <ambient>0.8 0.2 0.8 1</ambient>
+            <diffuse>0.8 0.2 0.8 1</diffuse>
+            <specular>0.5 0.5 0.2 1</specular>
+          </material>
+        </visual>
+        <collision name='adapter-v1_collision'>
+          <geometry>
+            <mesh>
+              <uri>file://meshes/adapter-v1.stl</uri>
+              <scale>0.001 0.001 0.001</scale>
+            </mesh>
+          </geometry>
+        </collision>
+        <enable_wind>false</enable_wind>
+      </link>
+      <joint name='base_link_j1' type='revolute'>
+        <pose>0 0.023733 0.024531 0 -0 0</pose>
         <parent>base_link</parent>
-        <child>j1_1</child>
+        <child>shoulder</child>
         <axis>
-            <xyz>0 0 1</xyz>
-            <limit>
-            <lower>-1e+16</lower>
-            <upper>1e+16</upper>
-            </limit>
-            <dynamics>
+          <xyz>0 1 0</xyz>
+          <limit>
+            <lower>-10000000000000000</lower>
+            <upper>10000000000000000</upper>
+            <effort>inf</effort>
+            <velocity>inf</velocity>
+            <stiffness>100000000</stiffness>
+            <dissipation>1</dissipation>
+          </limit>
+          <dynamics>
             <spring_reference>0</spring_reference>
             <spring_stiffness>0</spring_stiffness>
-            </dynamics>
+            <damping>0</damping>
+            <friction>0</friction>
+          </dynamics>
         </axis>
-        </joint>
-        <link name='j1_1'>
-        <pose relative_to='Revolute 11'>0 0 0 0 -0 0</pose>
-        <inertial>
-            <pose>-0.00715 6e-06 0.038268 0 -0 0</pose>
-            <mass>0.335581</mass>
-            <inertia>
-            <ixx>0.000317</ixx>
-            <ixy>0</ixy>
-            <ixz>5.6e-05</ixz>
-            <iyy>0.000357</iyy>
-            <iyz>0</iyz>
-            <izz>0.000183</izz>
-            </inertia>
-        </inertial>
-        <collision name='j1_1_collision'>
-            <pose>-0.002418 0 -0.072835 0 -0 0</pose>
-            <geometry>
-            <mesh>
-                <scale>0.001 0.001 0.001</scale>
-                <uri>file://./meshes/j1_1.stl</uri>
-            </mesh>
-            </geometry>
-            <surface>
-            <contact>
-                <ode/>
-            </contact>
-            <friction>
-                <ode>
-                <mu>0.2</mu>
-                <mu2>0.2</mu2>
-                </ode>
-            </friction>
-            </surface>
-        </collision>
-        <visual name='j1_1_visual'>
-            <pose>-0.002418 0 -0.072835 0 -0 0</pose>
-            <geometry>
-            <mesh>
-                <scale>0.001 0.001 0.001</scale>
-                <uri>file://./meshes/j1_1.stl</uri>
-            </mesh>
-            </geometry>
-            <material>
-            <script>
-                <name>Gazebo/Silver</name>
-                <uri>file://media/materials/scripts/gazebo.material</uri>
-            </script>
-            </material>
-        </visual>
-        <self_collide>1</self_collide>
-        </link>
-        <joint name='Revolute 4' type='revolute'>
-        <pose relative_to='j1_1'>-0.034705 0 0.059705 0 -0 0</pose>
-        <parent>j1_1</parent>
-        <child>j2_1</child>
+      </joint>
+      <joint name='shoulder_j2' type='revolute'>
+        <pose>0.063935 -0.184137 -0.024531 0 -0 0</pose>
+        <parent>shoulder</parent>
+        <child>elbow1</child>
         <axis>
-            <xyz>1 0 0</xyz>
-            <limit>
-            <lower>-1e+16</lower>
-            <upper>1e+16</upper>
-            </limit>
-            <dynamics>
+          <xyz>-1 0 0</xyz>
+          <limit>
+            <lower>-10000000000000000</lower>
+            <upper>10000000000000000</upper>
+            <effort>inf</effort>
+            <velocity>inf</velocity>
+            <stiffness>100000000</stiffness>
+            <dissipation>1</dissipation>
+          </limit>
+          <dynamics>
             <spring_reference>0</spring_reference>
             <spring_stiffness>0</spring_stiffness>
-            </dynamics>
+            <damping>0</damping>
+            <friction>0</friction>
+          </dynamics>
         </axis>
-        </joint>
-        <link name='j2_1'>
-        <pose relative_to='Revolute 4'>0 0 0 0 -0 0</pose>
-        <inertial>
-            <pose>-0.023209 -1e-06 0.051618 0 -0 0</pose>
-            <mass>0.524558</mass>
-            <inertia>
-            <ixx>0.001311</ixx>
-            <ixy>0</ixy>
-            <ixz>-1e-06</ixz>
-            <iyy>0.001359</iyy>
-            <iyz>0</iyz>
-            <izz>0.000278</izz>
-            </inertia>
-        </inertial>
-        <collision name='j2_1_collision'>
-            <pose>0.032287 0 -0.13254 0 -0 0</pose>
-            <geometry>
-            <mesh>
-                <scale>0.001 0.001 0.001</scale>
-                <uri>file://./meshes/j2_1.stl</uri>
-            </mesh>
-            </geometry>
-            <surface>
-            <contact>
-                <ode/>
-            </contact>
-            <friction>
-                <ode>
-                <mu>0.2</mu>
-                <mu2>0.2</mu2>
-                </ode>
-            </friction>
-            </surface>
-        </collision>
-        <visual name='j2_1_visual'>
-            <pose>0.032287 0 -0.13254 0 -0 0</pose>
-            <geometry>
-            <mesh>
-                <scale>0.001 0.001 0.001</scale>
-                <uri>file://./meshes/j2_1.stl</uri>
-            </mesh>
-            </geometry>
-            <material>
-            <script>
-                <name>Gazebo/Silver</name>
-                <uri>file://media/materials/scripts/gazebo.material</uri>
-            </script>
-            </material>
-        </visual>
-        <self_collide>1</self_collide>
-        </link>
-        <joint name='Revolute 5' type='revolute'>
-        <pose relative_to='j2_1'>0.006776 0 0.11 0 -0 0</pose>
-        <parent>j2_1</parent>
-        <child>j3_1</child>
+      </joint>
+      <joint name='elbow1_j3' type='revolute'>
+        <pose>-0.013935 -0.287963 0.024531 0 -0 0</pose>
+        <parent>elbow1</parent>
+        <child>elbow2</child>
         <axis>
-            <xyz>-1 0 0</xyz>
-            <limit>
-            <lower>-1e+16</lower>
-            <upper>1e+16</upper>
-            </limit>
-            <dynamics>
+          <xyz>-1 0 0</xyz>
+          <limit>
+            <lower>-10000000000000000</lower>
+            <upper>10000000000000000</upper>
+            <effort>inf</effort>
+            <velocity>inf</velocity>
+            <stiffness>100000000</stiffness>
+            <dissipation>1</dissipation>
+          </limit>
+          <dynamics>
             <spring_reference>0</spring_reference>
             <spring_stiffness>0</spring_stiffness>
-            </dynamics>
+            <damping>0</damping>
+            <friction>0</friction>
+          </dynamics>
         </axis>
-        </joint>
-        <link name='j3_1'>
-        <pose relative_to='Revolute 5'>0 0 0 0 -0 0</pose>
-        <inertial>
-            <pose>0.02307 0 0.043197 0 -0 0</pose>
-            <mass>0.41531</mass>
-            <inertia>
-            <ixx>0.000783</ixx>
-            <ixy>0</ixy>
-            <ixz>-3.4e-05</ixz>
-            <iyy>0.000834</iyy>
-            <iyz>0</iyz>
-            <izz>0.000191</izz>
-            </inertia>
-        </inertial>
-        <collision name='j3_1_collision'>
-            <pose>0.025511 0 -0.24254 0 -0 0</pose>
-            <geometry>
-            <mesh>
-                <scale>0.001 0.001 0.001</scale>
-                <uri>file://./meshes/j3_1.stl</uri>
-            </mesh>
-            </geometry>
-            <surface>
-            <contact>
-                <ode/>
-            </contact>
-            <friction>
-                <ode>
-                <mu>0.2</mu>
-                <mu2>0.2</mu2>
-                </ode>
-            </friction>
-            </surface>
-        </collision>
-        <visual name='j3_1_visual'>
-            <pose>0.025511 0 -0.24254 0 -0 0</pose>
-            <geometry>
-            <mesh>
-                <scale>0.001 0.001 0.001</scale>
-                <uri>file://./meshes/j3_1.stl</uri>
-            </mesh>
-            </geometry>
-            <material>
-            <script>
-                <name>Gazebo/Silver</name>
-                <uri>file://media/materials/scripts/gazebo.material</uri>
-            </script>
-            </material>
-        </visual>
-        <self_collide>1</self_collide>
-        </link>
-        <joint name='Revolute 6' type='revolute'>
-        <pose relative_to='j3_1'>-0.001444 0 0.096 0 -0 0</pose>
-        <parent>j3_1</parent>
-        <child>j4_1</child>
+      </joint>
+      <joint name='elbow2_j4' type='revolute'>
+        <pose>0.053935 0.36679 0.024531 0 -0 0</pose>
+        <parent>elbow2</parent>
+        <child>wrist</child>
         <axis>
-            <xyz>1 0 0</xyz>
-            <limit>
-            <lower>-1e+16</lower>
-            <upper>1e+16</upper>
-            </limit>
-            <dynamics>
+          <xyz>-1 -0 0</xyz>
+          <limit>
+            <lower>-10000000000000000</lower>
+            <upper>10000000000000000</upper>
+            <effort>inf</effort>
+            <velocity>inf</velocity>
+            <stiffness>100000000</stiffness>
+            <dissipation>1</dissipation>
+          </limit>
+          <dynamics>
             <spring_reference>0</spring_reference>
             <spring_stiffness>0</spring_stiffness>
-            </dynamics>
+            <damping>0</damping>
+            <friction>0</friction>
+          </dynamics>
         </axis>
-        </joint>
-        <link name='j4_1'>
-        <pose relative_to='Revolute 6'>0 0 0 0 -0 0</pose>
-        <inertial>
-            <pose>-0.022733 -3e-06 0.007679 0 -0 0</pose>
-            <mass>0.189013</mass>
-            <inertia>
-            <ixx>7.1e-05</ixx>
-            <ixy>0</ixy>
-            <ixz>1.7e-05</ixz>
-            <iyy>9.1e-05</iyy>
-            <iyz>0</iyz>
-            <izz>6.9e-05</izz>
-            </inertia>
-        </inertial>
-        <collision name='j4_1_collision'>
-            <pose>0.026955 0 -0.33854 0 -0 0</pose>
-            <geometry>
-            <mesh>
-                <scale>0.001 0.001 0.001</scale>
-                <uri>file://./meshes/j4_1.stl</uri>
-            </mesh>
-            </geometry>
-            <surface>
-            <contact>
-                <ode/>
-            </contact>
-            <friction>
-                <ode>
-                <mu>0.2</mu>
-                <mu2>0.2</mu2>
-                </ode>
-            </friction>
-            </surface>
-        </collision>
-        <visual name='j4_1_visual'>
-            <pose>0.026955 0 -0.33854 0 -0 0</pose>
-            <geometry>
-            <mesh>
-                <scale>0.001 0.001 0.001</scale>
-                <uri>file://./meshes/j4_1.stl</uri>
-            </mesh>
-            </geometry>
-            <material>
-            <script>
-                <name>Gazebo/Silver</name>
-                <uri>file://media/materials/scripts/gazebo.material</uri>
-            </script>
-            </material>
-        </visual>
-        <self_collide>1</self_collide>
-        </link>
-        <joint name='Revolute 7' type='revolute'>
-        <pose relative_to='j4_1'>-0.033245 0 0.03483 0 -0 0</pose>
-        <parent>j4_1</parent>
-        <child>j5_1</child>
+      </joint>
+      <joint name='wrist_j5' type='revolute'>
+        <pose>-0.07787 0.124531 0.405725 0 -0 0</pose>
+        <parent>wrist</parent>
+        <child>endeff</child>
         <axis>
-            <xyz>0 0 1</xyz>
-            <limit>
-            <lower>-1e+16</lower>
-            <upper>1e+16</upper>
-            </limit>
-            <dynamics>
+          <xyz>0 0 -1</xyz>
+          <limit>
+            <lower>-10000000000000000</lower>
+            <upper>10000000000000000</upper>
+            <effort>inf</effort>
+            <velocity>inf</velocity>
+            <stiffness>100000000</stiffness>
+            <dissipation>1</dissipation>
+          </limit>
+          <dynamics>
             <spring_reference>0</spring_reference>
             <spring_stiffness>0</spring_stiffness>
-            </dynamics>
+            <damping>0</damping>
+            <friction>0</friction>
+          </dynamics>
         </axis>
-        </joint>
-        <link name='j5_1'>
-        <pose relative_to='Revolute 7'>0 0 0 0 -0 0</pose>
-        <inertial>
-            <pose>-0.000108 -0.002887 0.027643 0 -0 0</pose>
-            <mass>0.226476</mass>
-            <inertia>
-            <ixx>0.000144</ixx>
-            <ixy>0</ixy>
-            <ixz>1e-06</ixz>
-            <iyy>0.00011</iyy>
-            <iyz>9e-06</iyz>
-            <izz>9.8e-05</izz>
-            </inertia>
-        </inertial>
-        <collision name='j5_1_collision'>
-            <pose>0.0602 0 -0.37337 0 -0 0</pose>
-            <geometry>
-            <mesh>
-                <scale>0.001 0.001 0.001</scale>
-                <uri>file://./meshes/j5_1.stl</uri>
-            </mesh>
-            </geometry>
-            <surface>
-            <contact>
-                <ode/>
-            </contact>
-            <friction>
-                <ode>
-                <mu>0.2</mu>
-                <mu2>0.2</mu2>
-                </ode>
-            </friction>
-            </surface>
-        </collision>
-        <visual name='j5_1_visual'>
-            <pose>0.0602 0 -0.37337 0 -0 0</pose>
-            <geometry>
-            <mesh>
-                <scale>0.001 0.001 0.001</scale>
-                <uri>file://./meshes/j5_1.stl</uri>
-            </mesh>
-            </geometry>
-            <material>
-            <script>
-                <name>Gazebo/Silver</name>
-                <uri>file://media/materials/scripts/gazebo.material</uri>
-            </script>
-            </material>
-        </visual>
-        <self_collide>1</self_collide>
-        </link>
-        <joint name='Revolute 9' type='revolute'>
-        <pose relative_to='j5_1'>0 -0.031671 0.039625 0 -0 0</pose>
-        <parent>j5_1</parent>
-        <child>j6_1</child>
+      </joint>
+      <joint name='endeff_j6' type='revolute'>
+        <pose>-0.128396 -0.0436 0.273557 0 -0 0</pose>
+        <parent>endeff</parent>
+        <child>adapter-v1</child>
         <axis>
-            <xyz>0 1 0</xyz>
-            <limit>
-            <lower>-1e+16</lower>
-            <upper>1e+16</upper>
-            </limit>
-            <dynamics>
+          <xyz>0 -1 0</xyz>
+          <limit>
+            <lower>-10000000000000000</lower>
+            <upper>10000000000000000</upper>
+            <effort>inf</effort>
+            <velocity>inf</velocity>
+            <stiffness>100000000</stiffness>
+            <dissipation>1</dissipation>
+          </limit>
+          <dynamics>
             <spring_reference>0</spring_reference>
             <spring_stiffness>0</spring_stiffness>
-            </dynamics>
+            <damping>0</damping>
+            <friction>0</friction>
+          </dynamics>
         </axis>
-        </joint>
-        <link name='j6_1'>
-        <pose relative_to='Revolute 9'>0 0 0 0 -0 0</pose>
-        <inertial>
-            <pose>0.000293 -0.03302 0.000815 0 -0 0</pose>
-            <mass>1.06304</mass>
-            <inertia>
-            <ixx>0.00132754</ixx>
-            <ixy>-7.51882e-07</ixy>
-            <ixz>-1.61557e-05</ixz>
-            <iyy>0.00177849</iyy>
-            <iyz>-5.28285e-07</iyz>
-            <izz>0.00060916</izz>
-            </inertia>
-        </inertial>
-        <collision name='j6_1_collision'>
-            <pose>0.0602 0.031671 -0.412995 0 -0 0</pose>
-            <geometry>
-            <mesh>
-                <scale>0.001 0.001 0.001</scale>
-                <uri>file://./meshes/j6_1.stl</uri>
-            </mesh>
-            </geometry>
-            <surface>
-            <contact>
-                <ode/>
-            </contact>
-            <friction>
-                <ode>
-                <mu>0.2</mu>
-                <mu2>0.2</mu2>
-                </ode>
-            </friction>
-            </surface>
-        </collision>
-        <collision name='j6_1_fixed_joint_lump__grip_phone_v1_1_collision_1'>
-            <pose>0.0602 0.031671 -0.412995 0 -0 0</pose>
-            <geometry>
-            <mesh>
-                <scale>0.001 0.001 0.001</scale>
-                <uri>file://./meshes/grip_phone_v1_1.stl</uri>
-            </mesh>
-            </geometry>
-            <surface>
-            <contact>
-                <ode/>
-            </contact>
-            <friction>
-                <ode>
-                <mu>0.2</mu>
-                <mu2>0.2</mu2>
-                </ode>
-            </friction>
-            </surface>
-        </collision>
-        <collision name='j6_1_fixed_joint_lump__iPhone17_v1_1_collision_2'>
-            <pose>0.0602 0.031671 -0.412995 0 -0 0</pose>
-            <geometry>
-            <mesh>
-                <scale>0.001 0.001 0.001</scale>
-                <uri>file://./meshes/iPhone17_v1_1.stl</uri>
-            </mesh>
-            </geometry>
-            <surface>
-            <contact>
-                <ode/>
-            </contact>
-            <friction>
-                <ode>
-                <mu>0.2</mu>
-                <mu2>0.2</mu2>
-                </ode>
-            </friction>
-            </surface>
-        </collision>
-        <visual name='j6_1_visual'>
-            <pose>0.0602 0.031671 -0.412995 0 -0 0</pose>
-            <geometry>
-            <mesh>
-                <scale>0.001 0.001 0.001</scale>
-                <uri>file://./meshes/j6_1.stl</uri>
-            </mesh>
-            </geometry>
-            <material>
-            <script>
-                <name>Gazebo/Silver</name>
-                <uri>file://media/materials/scripts/gazebo.material</uri>
-            </script>
-            </material>
-        </visual>
-        <visual name='j6_1_fixed_joint_lump__grip_phone_v1_1_visual_1'>
-            <pose>0.0602 0.031671 -0.412995 0 -0 0</pose>
-            <geometry>
-            <mesh>
-                <scale>0.001 0.001 0.001</scale>
-                <uri>file://./meshes/grip_phone_v1_1.stl</uri>
-            </mesh>
-            </geometry>
-            <material>
-            <script>
-                <name>Gazebo/Silver</name>
-                <uri>file://media/materials/scripts/gazebo.material</uri>
-            </script>
-            </material>
-        </visual>
-        <visual name='j6_1_fixed_joint_lump__iPhone17_v1_1_visual_2'>
-            <pose>0.0602 0.031671 -0.412995 0 -0 0</pose>
-            <geometry>
-            <mesh>
-                <scale>0.001 0.001 0.001</scale>
-                <uri>file://./meshes/iPhone17_v1_1.stl</uri>
-            </mesh>
-            </geometry>
-            <material>
-            <script>
-                <name>Gazebo/Silver</name>
-                <uri>file://media/materials/scripts/gazebo.material</uri>
-            </script>
-            </material>
-        </visual>
-        <self_collide>1</self_collide>
-        <self_collide>1</self_collide>
-        <self_collide>1</self_collide>
-        </link>
+      </joint>
+      <joint name='adapter-v1_Rigid-16' type='fixed'>
+        <pose>-0.067075 -0.116836 0.2643 0 -0 0</pose>
+        <parent>adapter-v1</parent>
+        <child>Component49-v1</child>
+      </joint>
+      <joint name='Component49-v1_Slider-17' type='prismatic'>
+        <pose>-0.082779 -0.190048 0.25225 0 -0 0</pose>
+        <parent>Component49-v1</parent>
+        <child>Component46-v1</child>
+        <axis>
+          <xyz>0.999749 -0.022405 0</xyz>
+          <limit>
+            <lower>-0.029999999999999999</lower>
+            <upper>0</upper>
+            <effort>inf</effort>
+            <velocity>inf</velocity>
+            <stiffness>100000000</stiffness>
+            <dissipation>1</dissipation>
+          </limit>
+          <dynamics>
+            <spring_reference>0</spring_reference>
+            <spring_stiffness>0</spring_stiffness>
+            <damping>0</damping>
+            <friction>0</friction>
+          </dynamics>
+        </axis>
+      </joint>
+      <joint name='Component49-v1_Slider-18' type='prismatic'>
+        <pose>-0.050156 -0.189676 0.25225 0 -0 0</pose>
+        <parent>Component49-v1</parent>
+        <child>Component47-v1</child>
+        <axis>
+          <xyz>0.999749 0.022401 0</xyz>
+          <limit>
+            <lower>0</lower>
+            <upper>0.029999999999999999</upper>
+            <effort>inf</effort>
+            <velocity>inf</velocity>
+            <stiffness>100000000</stiffness>
+            <dissipation>1</dissipation>
+          </limit>
+          <dynamics>
+            <spring_reference>0</spring_reference>
+            <spring_stiffness>0</spring_stiffness>
+            <damping>0</damping>
+            <friction>0</friction>
+          </dynamics>
+        </axis>
+      </joint>
+      <pose>-3e-06 0 5e-06 -0 0 -0.000365</pose>
+      <static>false</static>
+      <self_collide>false</self_collide>
     </model>
-    <light name='sun' type='directional'>
+    <light name='main_light' type='directional'>
       <pose>0 0 10 0 -0 0</pose>
       <cast_shadows>true</cast_shadows>
       <intensity>1</intensity>
