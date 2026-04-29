@@ -1,0 +1,1100 @@
+<sdf version='1.9'>
+  <world name='car_world'>
+    <physics name='1ms' type='ignored'>
+      <max_step_size>0.001</max_step_size>
+      <real_time_factor>1</real_time_factor>
+      <real_time_update_rate>1000</real_time_update_rate>
+    </physics>
+    <plugin name='ignition::gazebo::systems::Physics' filename='libignition-gazebo-physics-system.so'/>
+    <plugin name='ignition::gazebo::systems::UserCommands' filename='libignition-gazebo-user-commands-system.so'/>
+    <plugin name='ignition::gazebo::systems::SceneBroadcaster' filename='libignition-gazebo-scene-broadcaster-system.so'/>
+    <gravity>0 0 -9.8</gravity>
+    <magnetic_field>6e-06 2.3e-05 -4.2e-05</magnetic_field>
+    <atmosphere type='adiabatic'/>
+    <scene>
+      <ambient>0.4 0.4 0.4 1</ambient>
+      <background>0.7 0.7 0.7 1</background>
+      <shadows>true</shadows>
+    </scene>
+    <model name='RaspRover'>
+    <plugin
+      filename="gz-sim-diff-drive-system"
+      name="gz::sim::systems::DiffDrive">
+
+      <!-- LEFT SIDE -->
+      <left_joint>base_link_Revolute-8</left_joint>  <!-- front left -->
+      <left_joint>base_link_Revolute-9</left_joint>  <!-- back left -->
+
+      <!-- RIGHT SIDE -->
+      <right_joint>base_link_Revolute-7</right_joint> <!-- front right -->
+      <right_joint>base_link_Revolute-6</right_joint> <!-- back right -->
+
+      <wheel_separation>0.096</wheel_separation>
+      <wheel_radius>0.05</wheel_radius>
+
+      <topic>/cmd_vel</topic>
+
+    </plugin>
+      <link name='base_link'>
+        <pose>0.076216 0.034819 0.050736 0 -0 1.5708</pose>
+        <inertial>
+          <mass>0.80900899999999998</mass>
+          <pose>-0.035167 0.07585 -0.023256 0 -0 0</pose>
+          <inertia>
+            <ixx>0.00148347</ixx>
+            <iyy>0.0028089899999999999</iyy>
+            <izz>0.0036084699999999999</izz>
+            <ixy>2.9088699999999998e-06</ixy>
+            <iyz>7.1253399999999996e-06</iyz>
+            <ixz>1.4849200000000001e-06</ixz>
+          </inertia>
+        </inertial>
+        <visual name='base_link_visual'>
+          <geometry>
+            <mesh>
+              <uri>file://meshes/base_l.stl</uri>
+              <scale>0.001 0.001 0.001</scale>
+            </mesh>
+          </geometry>
+          <material>
+            <ambient>0.2 0.8 0.8 1</ambient>
+            <diffuse>0.2 0.8 0.8 1</diffuse>
+            <specular>0.5 0.5 0.2 1</specular>
+          </material>
+        </visual>
+        <collision name='base_link_collision'>
+          <geometry>
+            <mesh>
+              <uri>file://meshes/base_l.stl</uri>
+              <scale>0.001 0.001 0.001</scale>
+            </mesh>
+          </geometry>
+        </collision>
+        <enable_wind>false</enable_wind>
+      </link>
+      <link name='3'>
+        <pose>0.252468 -0.146763 0.093736 -0 -0 1.5708</pose>
+        <inertial>
+          <mass>4.1853800000000003</mass>
+          <pose>0.14019 0.252662 -0.044405 0 -0 0</pose>
+          <inertia>
+            <ixx>0.00488361</ixx>
+            <iyy>0.0071313799999999997</iyy>
+            <izz>0.0057877400000000004</izz>
+            <ixy>-1.3996699999999999e-05</ixy>
+            <iyz>2.2071399999999998e-06</iyz>
+            <ixz>4.4642699999999999e-05</ixz>
+          </inertia>
+        </inertial>
+        <visual name='3_visual'>
+          <geometry>
+            <mesh>
+              <uri>file://meshes/3.stl</uri>
+              <scale>0.001 0.001 0.001</scale>
+            </mesh>
+          </geometry>
+          <material>
+            <ambient>0 0 0 1</ambient>
+            <diffuse>0 0 0 1</diffuse>
+            <specular>0.5 0.5 0.2 1</specular>
+          </material>
+        </visual>
+        <collision name='3_collision'>
+          <geometry>
+            <mesh>
+              <uri>file://meshes/3.stl</uri>
+              <scale>0.001 0.001 0.001</scale>
+            </mesh>
+          </geometry>
+        </collision>
+        <enable_wind>false</enable_wind>
+      </link>
+      <link name='2'>
+        <pose>0.0408 -0.048498 -0.001 3.14159 1.57079 3.14159</pose>
+        <inertial>
+          <mass>0.39017299999999999</mass>
+          <pose>0 0 0.019263 0 -0 0</pose>
+          <inertia>
+            <ixx>0.000255994</ixx>
+            <iyy>0.00025599299999999999</iyy>
+            <izz>0.00038341999999999998</izz>
+            <ixy>8.1328500000000005e-10</ixy>
+            <iyz>-2.2683000000000001e-10</iyz>
+            <ixz>-1.96214e-10</ixz>
+          </inertia>
+        </inertial>
+        <visual name='2_visual'>
+          <geometry>
+            <mesh>
+              <uri>file://meshes/2.stl</uri>
+              <scale>0.001 0.001 0.001</scale>
+            </mesh>
+          </geometry>
+          <material>
+            <ambient>0 0 0 1</ambient>
+            <diffuse>0 0 0 1</diffuse>
+            <specular>0.5 0.5 0.2 1</specular>
+          </material>
+        </visual>
+        <collision name='2_collision'>
+          <geometry>
+            <mesh>
+              <uri>file://meshes/2.stl</uri>
+              <scale>0.001 0.001 0.001</scale>
+            </mesh>
+          </geometry>
+        </collision>
+        <enable_wind>false</enable_wind>
+      </link>
+      <link name='5'>
+        <pose>-0.0408 0.048498 -0.001 2e-06 1.57079 3.14159</pose>
+        <inertial>
+          <mass>0.39017299999999999</mass>
+          <pose>0 0 0.019263 0 -0 0</pose>
+          <inertia>
+            <ixx>0.000255994</ixx>
+            <iyy>0.00025599299999999999</iyy>
+            <izz>0.00038341999999999998</izz>
+            <ixy>8.1328500000000005e-10</ixy>
+            <iyz>-2.2683000000000001e-10</iyz>
+            <ixz>-1.96214e-10</ixz>
+          </inertia>
+        </inertial>
+        <visual name='5_visual'>
+          <geometry>
+            <mesh>
+              <uri>file://meshes/5.stl</uri>
+              <scale>0.001 0.001 0.001</scale>
+            </mesh>
+          </geometry>
+          <material>
+            <ambient>0 0 0 1</ambient>
+            <diffuse>0 0 0 1</diffuse>
+            <specular>0.5 0.5 0.2 1</specular>
+          </material>
+        </visual>
+        <collision name='5_collision'>
+          <geometry>
+            <mesh>
+              <uri>file://meshes/5.stl</uri>
+              <scale>0.001 0.001 0.001</scale>
+            </mesh>
+          </geometry>
+        </collision>
+        <enable_wind>false</enable_wind>
+      </link>
+      <link name='6'>
+        <pose>-0.0408 -0.048498 -0.001 2e-06 1.57079 3.14159</pose>
+        <inertial>
+          <mass>0.39017299999999999</mass>
+          <pose>0 0 0.019263 0 -0 0</pose>
+          <inertia>
+            <ixx>0.000255994</ixx>
+            <iyy>0.00025599299999999999</iyy>
+            <izz>0.00038341999999999998</izz>
+            <ixy>8.1328500000000005e-10</ixy>
+            <iyz>-2.2683000000000001e-10</iyz>
+            <ixz>-1.96214e-10</ixz>
+          </inertia>
+        </inertial>
+        <visual name='6_visual'>
+          <material>
+            <ambient>0 0 0 1</ambient>
+            <diffuse>0 0 0 1</diffuse>
+            <specular>0.5 0.5 0.2 1</specular>
+          </material>
+          <geometry>
+            <mesh>
+              <uri>file://meshes/6.stl</uri>
+              <scale>0.001 0.001 0.001</scale>
+            </mesh>
+          </geometry>
+        </visual>
+        <collision name='6_collision'>
+          <geometry>
+            <mesh>
+              <uri>file://meshes/6.stl</uri>
+              <scale>0.001 0.001 0.001</scale>
+            </mesh>
+          </geometry>
+        </collision>
+        <enable_wind>false</enable_wind>
+      </link>
+      <link name='7'>
+        <pose>0.0408 0.048498 -0.001 3.14159 1.57079 3.14159</pose>
+        <inertial>
+          <mass>0.39017299999999999</mass>
+          <pose>0 0 0.019263 0 -0 0</pose>
+          <inertia>
+            <ixx>0.000255994</ixx>
+            <iyy>0.00025599299999999999</iyy>
+            <izz>0.00038341999999999998</izz>
+            <ixy>8.1328500000000005e-10</ixy>
+            <iyz>-2.2683000000000001e-10</iyz>
+            <ixz>-1.96214e-10</ixz>
+          </inertia>
+        </inertial>
+        <visual name='7_visual'>
+          <geometry>
+            <mesh>
+              <uri>file://meshes/7.stl</uri>
+              <scale>0.001 0.001 0.001</scale>
+            </mesh>
+          </geometry>
+          <material>
+            <ambient>0.0 0.0 0.0 1</ambient>
+            <diffuse>0.0 0.0 0.0 1</diffuse>
+            <specular>0.5 0.5 0.2 1</specular>
+          </material>
+        </visual>
+        <collision name='7_collision'>
+          <geometry>
+            <mesh>
+              <uri>file://meshes/7.stl</uri>
+              <scale>0.001 0.001 0.001</scale>
+            </mesh>
+          </geometry>
+        </collision>
+        <enable_wind>false</enable_wind>
+      </link>
+      <link name='rpiCameraM-1'>
+        <pose>-0 -0.066522 0.103241 3.13736 -0 0</pose>
+        <inertial>
+          <mass>0.085319999999999993</mass>
+          <pose>0 -0.004659 -0.000119 0 -0 0</pose>
+          <inertia>
+            <ixx>9.32314e-06</ixx>
+            <iyy>7.16517e-06</iyy>
+            <izz>8.7972299999999998e-06</izz>
+            <ixy>2.3629600000000002e-10</ixy>
+            <iyz>7.9627899999999995e-07</iyz>
+            <ixz>-2.80727e-10</ixz>
+          </inertia>
+        </inertial>
+        <visual name='rpiCameraM-1_visual'>
+          <geometry>
+            <mesh>
+              <uri>file://meshes/rpiCameraM-1.stl</uri>
+              <scale>0.001 0.001 0.001</scale>
+            </mesh>
+          </geometry>
+          <material>
+            <ambient>0 0 0 1</ambient>
+            <diffuse>0 0 0 1</diffuse>
+            <specular>0.5 0.5 0.2 1</specular>
+          </material>
+        </visual>
+        <collision name='rpiCameraM-1_collision'>
+          <geometry>
+            <mesh>
+              <uri>file://meshes/rpiCameraM-1.stl</uri>
+              <scale>0.001 0.001 0.001</scale>
+            </mesh>
+          </geometry>
+        </collision>
+        <enable_wind>false</enable_wind>
+      </link>
+      <link name='8'>
+        <pose>0 -0.00047 -0.015276 -0.004239 0 -0</pose>
+        <inertial>
+          <mass>0.041121699999999997</mass>
+          <pose>0 -0.058019 0.118236 0 -0 0</pose>
+          <inertia>
+            <ixx>1.5027e-06</ixx>
+            <iyy>2.72846e-06</iyy>
+            <izz>2.6890899999999999e-06</izz>
+            <ixy>-2.0718099999999999e-23</ixy>
+            <iyz>-1.08829e-19</iyz>
+            <ixz>1.01902e-19</ixz>
+          </inertia>
+        </inertial>
+        <visual name='8_visual'>
+          <geometry>
+            <mesh>
+              <uri>file://meshes/8.stl</uri>
+              <scale>0.001 0.001 0.001</scale>
+            </mesh>
+          </geometry>
+          <material>
+            <ambient>0.2 0.8 0.8 1</ambient>
+            <diffuse>0.2 0.8 0.8 1</diffuse>
+            <specular>0.5 0.5 0.2 1</specular>
+          </material>
+        </visual>
+        <collision name='8_collision'>
+          <geometry>
+            <mesh>
+              <uri>file://meshes/8.stl</uri>
+              <scale>0.001 0.001 0.001</scale>
+            </mesh>
+          </geometry>
+        </collision>
+        <enable_wind>false</enable_wind>
+      </link>
+      <joint name='base_link_Rigid-5' type='fixed'>
+        <pose>0.146763 0.252468 -0.093736 0 -0 0</pose>
+        <parent>base_link</parent>
+        <child>3</child>
+      </joint>
+      <joint name='base_link_Revolute-6' type='revolute'>
+        <pose>0 -0 0 0 -0 0</pose>
+        <parent>base_link</parent>
+        <child>5</child>
+        <axis>
+          <xyz>-0 -0 -1</xyz>
+          <limit>
+            <lower>-10000000000000000</lower>
+            <upper>10000000000000000</upper>
+            <effort>inf</effort>
+            <velocity>inf</velocity>
+            <stiffness>100000000</stiffness>
+            <dissipation>1</dissipation>
+          </limit>
+          <dynamics>
+            <spring_reference>0</spring_reference>
+            <spring_stiffness>0</spring_stiffness>
+            <damping>0</damping>
+            <friction>0</friction>
+          </dynamics>
+        </axis>
+      </joint>
+      <joint name='base_link_Revolute-7' type='revolute'>
+        <pose>0 0 0 0 -0 0</pose>
+        <parent>base_link</parent>
+        <child>6</child>
+        <axis>
+          <xyz>-0 -0 -1</xyz>
+          <limit>
+            <lower>-10000000000000000</lower>
+            <upper>10000000000000000</upper>
+            <effort>inf</effort>
+            <velocity>inf</velocity>
+            <stiffness>100000000</stiffness>
+            <dissipation>1</dissipation>
+          </limit>
+          <dynamics>
+            <spring_reference>0</spring_reference>
+            <spring_stiffness>0</spring_stiffness>
+            <damping>0</damping>
+            <friction>0</friction>
+          </dynamics>
+        </axis>
+      </joint>
+      <joint name='base_link_Revolute-8' type='revolute'>
+        <pose>-0 0 0 0 -0 0</pose>
+        <parent>base_link</parent>
+        <child>2</child>
+        <axis>
+          <xyz>0 0 1</xyz>
+          <limit>
+            <lower>-10000000000000000</lower>
+            <upper>10000000000000000</upper>
+            <effort>inf</effort>
+            <velocity>inf</velocity>
+            <stiffness>100000000</stiffness>
+            <dissipation>1</dissipation>
+          </limit>
+          <dynamics>
+            <spring_reference>0</spring_reference>
+            <spring_stiffness>0</spring_stiffness>
+            <damping>0</damping>
+            <friction>0</friction>
+          </dynamics>
+        </axis>
+      </joint>
+      <joint name='base_link_Revolute-9' type='revolute'>
+        <pose>-0 0 0 0 -0 0</pose>
+        <parent>base_link</parent>
+        <child>7</child>
+        <axis>
+          <xyz>0 0 1</xyz>
+          <limit>
+            <lower>-10000000000000000</lower>
+            <upper>10000000000000000</upper>
+            <effort>inf</effort>
+            <velocity>inf</velocity>
+            <stiffness>100000000</stiffness>
+            <dissipation>1</dissipation>
+          </limit>
+          <dynamics>
+            <spring_reference>0</spring_reference>
+            <spring_stiffness>0</spring_stiffness>
+            <damping>0</damping>
+            <friction>0</friction>
+          </dynamics>
+        </axis>
+      </joint>
+      <joint name='3_Revolute-10' type='revolute'>
+        <pose>0 -0.065325 0.110736 0 -0 0</pose>
+        <parent>3</parent>
+        <child>8</child>
+        <axis>
+          <xyz>-1 0 0</xyz>
+          <limit>
+            <lower>-1.0471999999999999</lower>
+            <upper>0.436332</upper>
+            <effort>inf</effort>
+            <velocity>inf</velocity>
+            <stiffness>100000000</stiffness>
+            <dissipation>1</dissipation>
+          </limit>
+          <dynamics>
+            <spring_reference>0</spring_reference>
+            <spring_stiffness>0</spring_stiffness>
+            <damping>0</damping>
+            <friction>0</friction>
+          </dynamics>
+        </axis>
+      </joint>
+      <joint name='8_Revolute-11' type='revolute'>
+        <pose>0 -0.001229 -0 0 -0 0</pose>
+        <parent>8</parent>
+        <child>rpiCameraM-1</child>
+        <axis>
+          <xyz>0 1 0</xyz>
+          <limit>
+            <lower>-10000000000000000</lower>
+            <upper>10000000000000000</upper>
+            <effort>inf</effort>
+            <velocity>inf</velocity>
+            <stiffness>100000000</stiffness>
+            <dissipation>1</dissipation>
+          </limit>
+          <dynamics>
+            <spring_reference>0</spring_reference>
+            <spring_stiffness>0</spring_stiffness>
+            <damping>0</damping>
+            <friction>0</friction>
+          </dynamics>
+        </axis>
+      </joint>
+      <pose>-0.317872 -0 0.038276 0 0 -0</pose>
+      <static>false</static>
+      <self_collide>false</self_collide>
+    </model>
+    <model name='ground_plane'>
+      <static>true</static>
+      <link name='link'>
+        <collision name='collision'>
+          <geometry>
+            <plane>
+              <normal>0 0 1</normal>
+              <size>1 1</size>
+            </plane>
+          </geometry>
+          <surface>
+            <friction>
+              <ode/>
+            </friction>
+            <bounce/>
+            <contact/>
+          </surface>
+        </collision>
+        <visual name='visual'>
+          <geometry>
+            <plane>
+              <normal>0 0 1</normal>
+              <size>100 100</size>
+            </plane>
+          </geometry>
+          <material>
+            <ambient>0.8 0.8 0.8 1</ambient>
+            <diffuse>0.8 0.8 0.8 1</diffuse>
+            <specular>0.8 0.8 0.8 1</specular>
+          </material>
+        </visual>
+        <pose>0 0 0 0 -0 0</pose>
+        <inertial>
+          <pose>0 0 0 0 -0 0</pose>
+          <mass>1</mass>
+          <inertia>
+            <ixx>1</ixx>
+            <ixy>0</ixy>
+            <ixz>0</ixz>
+            <iyy>1</iyy>
+            <iyz>0</iyz>
+            <izz>1</izz>
+          </inertia>
+        </inertial>
+        <enable_wind>false</enable_wind>
+      </link>
+      <pose>0 0 0 0 -0 0</pose>
+      <self_collide>false</self_collide>
+    </model>
+    <model name='joints'>
+      <link name='shoulder'>
+        <pose>0 0.032123 0.051938 1.5708 -0 0</pose>
+        <inertial>
+          <mass>0.89223600000000003</mass>
+          <pose>0.006107 0.06982 0.02453 0 -0 0</pose>
+          <inertia>
+            <ixx>0.00063692900000000005</ixx>
+            <iyy>0.00024207800000000001</iyy>
+            <izz>0.000714013</izz>
+            <ixy>-0.00014307799999999999</ixy>
+            <iyz>-1.82782e-13</iyz>
+            <ixz>2.1864799999999999e-13</ixz>
+          </inertia>
+        </inertial>
+        <visual name='shoulder_visual'>
+          <geometry>
+            <mesh>
+              <uri>file://meshes/shoulder.stl</uri>
+              <scale>0.001 0.001 0.001</scale>
+            </mesh>
+          </geometry>
+          <material>
+            <ambient>0.8 0.2 0.8 1</ambient>
+            <diffuse>0.8 0.2 0.8 1</diffuse>
+            <specular>0.5 0.5 0.2 1</specular>
+          </material>
+        </visual>
+        <collision name='shoulder_collision'>
+          <geometry>
+            <mesh>
+              <uri>file://meshes/shoulder.stl</uri>
+              <scale>0.001 0.001 0.001</scale>
+            </mesh>
+          </geometry>
+        </collision>
+        <enable_wind>false</enable_wind>
+      </link>
+      <link name='elbow1'>
+        <pose>0.1 0.032161 0.331933 1.57101 -0 -3.14159</pose>
+        <inertial>
+          <mass>1.3454699999999999</mass>
+          <pose>0.035943 -0.13605 -0.02453 0 -0 0</pose>
+          <inertia>
+            <ixx>0.0020138700000000001</ixx>
+            <iyy>0.00038056400000000001</iyy>
+            <izz>0.0021456600000000002</izz>
+            <ixy>-1.9530399999999999e-12</ixy>
+            <iyz>-3.38013e-16</iyz>
+            <ixz>5.2711999999999998e-13</ixz>
+          </inertia>
+        </inertial>
+        <visual name='elbow1_visual'>
+          <geometry>
+            <mesh>
+              <uri>file://meshes/elbow1.stl</uri>
+              <scale>0.001 0.001 0.001</scale>
+            </mesh>
+          </geometry>
+          <material>
+            <ambient>0.8 0.2 0.8 1</ambient>
+            <diffuse>0.8 0.2 0.8 1</diffuse>
+            <specular>0.5 0.5 0.2 1</specular>
+          </material>
+        </visual>
+        <collision name='elbow1_collision'>
+          <geometry>
+            <mesh>
+              <uri>file://meshes/elbow1.stl</uri>
+              <scale>0.001 0.001 0.001</scale>
+            </mesh>
+          </geometry>
+        </collision>
+        <enable_wind>false</enable_wind>
+      </link>
+      <link name='elbow2'>
+        <pose>0.05 0.031977 0.531952 1.57138 -0 0</pose>
+        <inertial>
+          <mass>1.3454699999999999</mass>
+          <pose>-0.041927 -0.239877 0.02453 0 -0 0</pose>
+          <inertia>
+            <ixx>0.0020138700000000001</ixx>
+            <iyy>0.00038056400000000001</iyy>
+            <izz>0.0021456600000000002</izz>
+            <ixy>-1.9530399999999999e-12</ixy>
+            <iyz>-3.3831300000000002e-16</iyz>
+            <ixz>5.2711999999999998e-13</ixz>
+          </inertia>
+        </inertial>
+        <visual name='elbow2_visual'>
+          <geometry>
+            <mesh>
+              <uri>file://meshes/elbow2.stl</uri>
+              <scale>0.001 0.001 0.001</scale>
+            </mesh>
+          </geometry>
+          <material>
+            <ambient>0.8 0.2 0.8 1</ambient>
+            <diffuse>0.8 0.2 0.8 1</diffuse>
+            <specular>0.5 0.5 0.2 1</specular>
+          </material>
+        </visual>
+        <collision name='elbow2_collision'>
+          <geometry>
+            <mesh>
+              <uri>file://meshes/elbow2.stl</uri>
+              <scale>0.001 0.001 0.001</scale>
+            </mesh>
+          </geometry>
+        </collision>
+        <enable_wind>false</enable_wind>
+      </link>
+      <link name='wrist'>
+        <pose>0.09 0.032542 0.706907 -1.56956 -0 3.14159</pose>
+        <inertial>
+          <mass>0.56212899999999999</mass>
+          <pose>0.027531 0.357129 0.02453 0 -0 0</pose>
+          <inertia>
+            <ixx>0.00016124100000000001</ixx>
+            <iyy>0.00016124100000000001</iyy>
+            <izz>0.00021861800000000001</izz>
+            <ixy>-5.36332e-05</ixy>
+            <iyz>-1.5165100000000001e-13</iyz>
+            <ixz>1.5166800000000001e-13</ixz>
+          </inertia>
+        </inertial>
+        <visual name='wrist_visual'>
+          <geometry>
+            <mesh>
+              <uri>file://meshes/wrist.stl</uri>
+              <scale>0.001 0.001 0.001</scale>
+            </mesh>
+          </geometry>
+          <material>
+            <ambient>0.8 0.2 0.8 1</ambient>
+            <diffuse>0.8 0.2 0.8 1</diffuse>
+            <specular>0.5 0.5 0.2 1</specular>
+          </material>
+        </visual>
+        <collision name='wrist_collision'>
+          <geometry>
+            <mesh>
+              <uri>file://meshes/wrist.stl</uri>
+              <scale>0.001 0.001 0.001</scale>
+            </mesh>
+          </geometry>
+        </collision>
+        <enable_wind>false</enable_wind>
+      </link>
+      <link name='endeff'>
+        <pose>0.149954 0.132664 0.781783 3.14035 0 0.000369</pose>
+        <inertial>
+          <mass>0.86778999999999995</mass>
+          <pose>-0.07787 0.115884 0.374762 0 -0 0</pose>
+          <inertia>
+            <ixx>0.00048065</ixx>
+            <iyy>0.00026170499999999999</iyy>
+            <izz>0.00039769399999999998</izz>
+            <ixy>2.3478199999999999e-09</ixy>
+            <iyz>-3.8289299999999999e-05</iyz>
+            <ixz>7.6579099999999993e-09</ixz>
+          </inertia>
+        </inertial>
+        <visual name='endeff_visual'>
+          <geometry>
+            <mesh>
+              <uri>file://meshes/endeff.stl</uri>
+              <scale>0.001 0.001 0.001</scale>
+            </mesh>
+          </geometry>
+          <material>
+            <ambient>0.8 0.2 0.8 1</ambient>
+            <diffuse>0.8 0.2 0.8 1</diffuse>
+            <specular>0.5 0.5 0.2 1</specular>
+          </material>
+        </visual>
+        <collision name='endeff_collision'>
+          <geometry>
+            <mesh>
+              <uri>file://meshes/endeff.stl</uri>
+              <scale>0.001 0.001 0.001</scale>
+            </mesh>
+          </geometry>
+        </collision>
+        <enable_wind>false</enable_wind>
+      </link>
+      <link name='base_link'>
+        <pose>3e-06 0 0 -0 -0 0.000365</pose>
+        <inertial>
+          <mass>2.3872100000000001</mass>
+          <pose>3.7e-05 0.005654 0.03473 0 -0 0</pose>
+          <inertia>
+            <ixx>0.0018634599999999999</ixx>
+            <iyy>0.0017434</iyy>
+            <izz>0.0016067500000000001</izz>
+            <ixy>1.4751099999999999e-06</ixy>
+            <iyz>-9.4673399999999994e-06</iyz>
+            <ixz>1.2099400000000001e-06</ixz>
+          </inertia>
+        </inertial>
+        <visual name='base_link_visual'>
+          <geometry>
+            <mesh>
+              <uri>file://meshes/base.stl</uri>
+              <scale>0.001 0.001 0.001</scale>
+            </mesh>
+          </geometry>
+          <material>
+            <ambient>0.8 0.2 0.8 1</ambient>
+            <diffuse>0.8 0.2 0.8 1</diffuse>
+            <specular>0.5 0.5 0.2 1</specular>
+          </material>
+        </visual>
+        <collision name='base_link_collision'>
+          <geometry>
+            <mesh>
+              <uri>file://meshes/base.stl</uri>
+              <scale>0.001 0.001 0.001</scale>
+            </mesh>
+          </geometry>
+        </collision>
+        <enable_wind>false</enable_wind>
+      </link>
+      <link name='Component46-v1'>
+        <pose>-0.006306 -0.062218 0.156553 0.001243 0.000121 -3.11882</pose>
+        <inertial>
+          <mass>0.052696</mass>
+          <pose>-0.092798 -0.202844 0.252122 0 -0 0</pose>
+          <inertia>
+            <ixx>4.6930900000000002e-06</ixx>
+            <iyy>2.55113e-06</iyy>
+            <izz>3.6803999999999999e-06</izz>
+            <ixy>4.35233e-09</ixy>
+            <iyz>7.2444499999999997e-11</iyz>
+            <ixz>9.0974000000000005e-09</ixz>
+          </inertia>
+        </inertial>
+        <visual name='Component46-v1_visual'>
+          <geometry>
+            <mesh>
+              <uri>file://meshes/Component46-v1.stl</uri>
+              <scale>0.001 0.001 0.001</scale>
+            </mesh>
+          </geometry>
+          <material>
+            <ambient>0.8 0.2 0.8 1</ambient>
+            <diffuse>0.8 0.2 0.8 1</diffuse>
+            <specular>0.5 0.5 0.2 1</specular>
+          </material>
+        </visual>
+        <collision name='Component46-v1_collision'>
+          <geometry>
+            <mesh>
+              <uri>file://meshes/Component46-v1.stl</uri>
+              <scale>0.001 0.001 0.001</scale>
+            </mesh>
+          </geometry>
+        </collision>
+        <enable_wind>false</enable_wind>
+      </link>
+      <link name='Component47-v1'>
+        <pose>0.0178 -0.058858 0.156552 0.001237 0.000177 3.11956</pose>
+        <inertial>
+          <mass>0.053148500000000001</mass>
+          <pose>-0.040151 -0.202472 0.252169 0 -0 0</pose>
+          <inertia>
+            <ixx>4.7224099999999997e-06</ixx>
+            <iyy>2.5687000000000001e-06</iyy>
+            <izz>3.6994000000000001e-06</izz>
+            <ixy>-4.3999600000000002e-09</ixy>
+            <iyz>4.3483399999999999e-11</iyz>
+            <ixz>-5.1396500000000001e-09</ixz>
+          </inertia>
+        </inertial>
+        <visual name='Component47-v1_visual'>
+          <geometry>
+            <mesh>
+              <uri>file://meshes/Component47-v1.stl</uri>
+              <scale>0.001 0.001 0.001</scale>
+            </mesh>
+          </geometry>
+          <material>
+            <ambient>0.8 0.2 0.8 1</ambient>
+            <diffuse>0.8 0.2 0.8 1</diffuse>
+            <specular>0.5 0.5 0.2 1</specular>
+          </material>
+        </visual>
+        <collision name='Component47-v1_collision'>
+          <geometry>
+            <mesh>
+              <uri>file://meshes/Component47-v1.stl</uri>
+              <scale>0.001 0.001 0.001</scale>
+            </mesh>
+          </geometry>
+        </collision>
+        <enable_wind>false</enable_wind>
+      </link>
+      <link name='Component49-v1'>
+        <pose>0.00512 -0.060658 0.148052 0.00124 0.000149 -3.14123</pose>
+        <inertial>
+          <mass>0.77099899999999999</mass>
+          <pose>-0.065944 -0.146983 0.267342 0 -0 0</pose>
+          <inertia>
+            <ixx>0.00033165400000000002</ixx>
+            <iyy>0.00028393199999999998</iyy>
+            <izz>0.00037760799999999998</izz>
+            <ixy>-3.0274599999999998e-07</ixy>
+            <iyz>-5.0883000000000001e-06</iyz>
+            <ixz>-1.90211e-05</ixz>
+          </inertia>
+        </inertial>
+        <visual name='Component49-v1_visual'>
+          <geometry>
+            <mesh>
+              <uri>file://meshes/Component49-v1.stl</uri>
+              <scale>0.001 0.001 0.001</scale>
+            </mesh>
+          </geometry>
+          <material>
+            <ambient>0.8 0.2 0.8 1</ambient>
+            <diffuse>0.8 0.2 0.8 1</diffuse>
+            <specular>0.5 0.5 0.2 1</specular>
+          </material>
+        </visual>
+        <collision name='Component49-v1_collision'>
+          <geometry>
+            <mesh>
+              <uri>file://meshes/Component49-v1.stl</uri>
+              <scale>0.001 0.001 0.001</scale>
+            </mesh>
+          </geometry>
+        </collision>
+        <enable_wind>false</enable_wind>
+      </link>
+      <link name='adapter-v1'>
+        <pose>0.200484 0.011318 0.68585 3.14035 -0.000149 0.000369</pose>
+        <inertial>
+          <mass>0.020902</mass>
+          <pose>-0.128399 -0.041841 0.273549 0 -0 0</pose>
+          <inertia>
+            <ixx>3.01336e-06</ixx>
+            <iyy>5.36657e-06</iyy>
+            <izz>3.0162200000000002e-06</izz>
+            <ixy>-2.4006999999999998e-10</ixy>
+            <iyz>1.4896499999999999e-09</iyz>
+            <ixz>6.5154399999999995e-13</ixz>
+          </inertia>
+        </inertial>
+        <visual name='adapter-v1_visual'>
+          <geometry>
+            <mesh>
+              <uri>file://meshes/adapter-v1.stl</uri>
+              <scale>0.001 0.001 0.001</scale>
+            </mesh>
+          </geometry>
+          <material>
+            <ambient>0.8 0.2 0.8 1</ambient>
+            <diffuse>0.8 0.2 0.8 1</diffuse>
+            <specular>0.5 0.5 0.2 1</specular>
+          </material>
+        </visual>
+        <collision name='adapter-v1_collision'>
+          <geometry>
+            <mesh>
+              <uri>file://meshes/adapter-v1.stl</uri>
+              <scale>0.001 0.001 0.001</scale>
+            </mesh>
+          </geometry>
+        </collision>
+        <enable_wind>false</enable_wind>
+      </link>
+      <joint name='base_link_j1' type='revolute'>
+        <pose>0 0.023733 0.024531 0 -0 0</pose>
+        <parent>base_link</parent>
+        <child>shoulder</child>
+        <axis>
+          <xyz>0 1 0</xyz>
+          <limit>
+            <lower>-10000000000000000</lower>
+            <upper>10000000000000000</upper>
+            <effort>inf</effort>
+            <velocity>inf</velocity>
+            <stiffness>100000000</stiffness>
+            <dissipation>1</dissipation>
+          </limit>
+          <dynamics>
+            <spring_reference>0</spring_reference>
+            <spring_stiffness>0</spring_stiffness>
+            <damping>0</damping>
+            <friction>0</friction>
+          </dynamics>
+        </axis>
+      </joint>
+      <joint name='shoulder_j2' type='revolute'>
+        <pose>0.063935 -0.184137 -0.024531 0 -0 0</pose>
+        <parent>shoulder</parent>
+        <child>elbow1</child>
+        <axis>
+          <xyz>-1 0 0</xyz>
+          <limit>
+            <lower>-10000000000000000</lower>
+            <upper>10000000000000000</upper>
+            <effort>inf</effort>
+            <velocity>inf</velocity>
+            <stiffness>100000000</stiffness>
+            <dissipation>1</dissipation>
+          </limit>
+          <dynamics>
+            <spring_reference>0</spring_reference>
+            <spring_stiffness>0</spring_stiffness>
+            <damping>0</damping>
+            <friction>0</friction>
+          </dynamics>
+        </axis>
+      </joint>
+      <joint name='elbow1_j3' type='revolute'>
+        <pose>-0.013935 -0.287963 0.024531 0 -0 0</pose>
+        <parent>elbow1</parent>
+        <child>elbow2</child>
+        <axis>
+          <xyz>-1 0 0</xyz>
+          <limit>
+            <lower>-10000000000000000</lower>
+            <upper>10000000000000000</upper>
+            <effort>inf</effort>
+            <velocity>inf</velocity>
+            <stiffness>100000000</stiffness>
+            <dissipation>1</dissipation>
+          </limit>
+          <dynamics>
+            <spring_reference>0</spring_reference>
+            <spring_stiffness>0</spring_stiffness>
+            <damping>0</damping>
+            <friction>0</friction>
+          </dynamics>
+        </axis>
+      </joint>
+      <joint name='elbow2_j4' type='revolute'>
+        <pose>0.053935 0.36679 0.024531 0 -0 0</pose>
+        <parent>elbow2</parent>
+        <child>wrist</child>
+        <axis>
+          <xyz>-1 -0 0</xyz>
+          <limit>
+            <lower>-10000000000000000</lower>
+            <upper>10000000000000000</upper>
+            <effort>inf</effort>
+            <velocity>inf</velocity>
+            <stiffness>100000000</stiffness>
+            <dissipation>1</dissipation>
+          </limit>
+          <dynamics>
+            <spring_reference>0</spring_reference>
+            <spring_stiffness>0</spring_stiffness>
+            <damping>0</damping>
+            <friction>0</friction>
+          </dynamics>
+        </axis>
+      </joint>
+      <joint name='wrist_j5' type='revolute'>
+        <pose>-0.07787 0.124531 0.405725 0 -0 0</pose>
+        <parent>wrist</parent>
+        <child>endeff</child>
+        <axis>
+          <xyz>0 0 -1</xyz>
+          <limit>
+            <lower>-10000000000000000</lower>
+            <upper>10000000000000000</upper>
+            <effort>inf</effort>
+            <velocity>inf</velocity>
+            <stiffness>100000000</stiffness>
+            <dissipation>1</dissipation>
+          </limit>
+          <dynamics>
+            <spring_reference>0</spring_reference>
+            <spring_stiffness>0</spring_stiffness>
+            <damping>0</damping>
+            <friction>0</friction>
+          </dynamics>
+        </axis>
+      </joint>
+      <joint name='endeff_j6' type='revolute'>
+        <pose>-0.128396 -0.0436 0.273557 0 -0 0</pose>
+        <parent>endeff</parent>
+        <child>adapter-v1</child>
+        <axis>
+          <xyz>0 -1 0</xyz>
+          <limit>
+            <lower>-10000000000000000</lower>
+            <upper>10000000000000000</upper>
+            <effort>inf</effort>
+            <velocity>inf</velocity>
+            <stiffness>100000000</stiffness>
+            <dissipation>1</dissipation>
+          </limit>
+          <dynamics>
+            <spring_reference>0</spring_reference>
+            <spring_stiffness>0</spring_stiffness>
+            <damping>0</damping>
+            <friction>0</friction>
+          </dynamics>
+        </axis>
+      </joint>
+      <joint name='adapter-v1_Rigid-16' type='fixed'>
+        <pose>-0.067075 -0.116836 0.2643 0 -0 0</pose>
+        <parent>adapter-v1</parent>
+        <child>Component49-v1</child>
+      </joint>
+      <joint name='Component49-v1_Slider-17' type='prismatic'>
+        <pose>-0.082779 -0.190048 0.25225 0 -0 0</pose>
+        <parent>Component49-v1</parent>
+        <child>Component46-v1</child>
+        <axis>
+          <xyz>0.999749 -0.022405 0</xyz>
+          <limit>
+            <lower>-0.029999999999999999</lower>
+            <upper>0</upper>
+            <effort>inf</effort>
+            <velocity>inf</velocity>
+            <stiffness>100000000</stiffness>
+            <dissipation>1</dissipation>
+          </limit>
+          <dynamics>
+            <spring_reference>0</spring_reference>
+            <spring_stiffness>0</spring_stiffness>
+            <damping>0</damping>
+            <friction>0</friction>
+          </dynamics>
+        </axis>
+      </joint>
+      <joint name='Component49-v1_Slider-18' type='prismatic'>
+        <pose>-0.050156 -0.189676 0.25225 0 -0 0</pose>
+        <parent>Component49-v1</parent>
+        <child>Component47-v1</child>
+        <axis>
+          <xyz>0.999749 0.022401 0</xyz>
+          <limit>
+            <lower>0</lower>
+            <upper>0.029999999999999999</upper>
+            <effort>inf</effort>
+            <velocity>inf</velocity>
+            <stiffness>100000000</stiffness>
+            <dissipation>1</dissipation>
+          </limit>
+          <dynamics>
+            <spring_reference>0</spring_reference>
+            <spring_stiffness>0</spring_stiffness>
+            <damping>0</damping>
+            <friction>0</friction>
+          </dynamics>
+        </axis>
+      </joint>
+      <pose>-3e-06 0 5e-06 -0 0 -0.000365</pose>
+      <static>false</static>
+      <self_collide>false</self_collide>
+    </model>
+    <light name='main_light' type='directional'>
+      <pose>0 0 10 0 -0 0</pose>
+      <cast_shadows>true</cast_shadows>
+      <intensity>1</intensity>
+      <direction>-0.5 0.1 -0.9</direction>
+      <diffuse>0.8 0.8 0.8 1</diffuse>
+      <specular>0.2 0.2 0.2 1</specular>
+      <attenuation>
+        <range>1000</range>
+        <linear>0.01</linear>
+        <constant>0.90000000000000002</constant>
+        <quadratic>0.001</quadratic>
+      </attenuation>
+      <spot>
+        <inner_angle>0</inner_angle>
+        <outer_angle>0</outer_angle>
+        <falloff>0</falloff>
+      </spot>
+    </light>
+  </world>
+</sdf>
