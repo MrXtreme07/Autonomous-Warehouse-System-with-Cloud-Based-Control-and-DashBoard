@@ -17,24 +17,24 @@
       <shadows>true</shadows>
     </scene>
     <model name='RaspRover'>
-    <plugin
-      filename="gz-sim-diff-drive-system"
-      name="gz::sim::systems::DiffDrive">
+      <plugin
+        filename="gz-sim-diff-drive-system"
+        name="gz::sim::systems::DiffDrive">
 
-      <!-- LEFT SIDE -->
-      <left_joint>base_link_Revolute-8</left_joint>  <!-- front left -->
-      <left_joint>base_link_Revolute-9</left_joint>  <!-- back left -->
+        <!-- LEFT SIDE -->
+        <left_joint>base_link_Revolute-8</left_joint>  <!-- front left -->
+        <left_joint>base_link_Revolute-9</left_joint>  <!-- back left -->
 
-      <!-- RIGHT SIDE -->
-      <right_joint>base_link_Revolute-7</right_joint> <!-- front right -->
-      <right_joint>base_link_Revolute-6</right_joint> <!-- back right -->
+        <!-- RIGHT SIDE -->
+        <right_joint>base_link_Revolute-7</right_joint> <!-- front right -->
+        <right_joint>base_link_Revolute-6</right_joint> <!-- back right -->
 
-      <wheel_separation>0.096</wheel_separation>
-      <wheel_radius>0.05</wheel_radius>
+        <wheel_separation>0.096</wheel_separation>
+        <wheel_radius>0.05</wheel_radius>
 
-      <topic>/cmd_vel</topic>
+        <topic>/cmd_vel</topic>
 
-    </plugin>
+      </plugin>
       <link name='base_link'>
         <pose>0.076216 0.034819 0.050736 0 -0 1.5708</pose>
         <inertial>
@@ -522,6 +522,18 @@
       <self_collide>false</self_collide>
     </model>
     <model name='joints'>
+      <plugin
+        filename="ignition-gazebo-joint-controller-system"
+        name="ignition::gazebo::systems::JointController">
+
+        <joint_name>base_link_j1</joint_name>
+        <joint_name>shoulder_j2</joint_name>
+        <joint_name>elbow1_j3</joint_name>
+        <joint_name>elbow2_j4</joint_name>
+        <joint_name>wrist_j5</joint_name>
+        <joint_name>endeff_j6</joint_name>
+
+      </plugin>
       <link name='shoulder'>
         <pose>0 0.032123 0.051938 1.5708 -0 0</pose>
         <inertial>
