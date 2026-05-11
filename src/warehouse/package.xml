@@ -1,0 +1,17 @@
+<?xml version="1.0"?>
+<package format="3">
+  <name>warehouse</name>
+  <version>0.0.1</version>
+  <description>Warehouse robot simulation</description>
+
+  <maintainer email="user@todo.com">user</maintainer>
+  <license>Apache-2.0</license>
+
+  <buildtool_depend>ament_cmake</buildtool_depend>
+
+  <exec_depend>gazebo_ros</exec_depend>
+  <exec_depend>gazebo_ros2_control</exec_depend>
+  <exec_depend>robot_state_publisher</exec_depend>
+  <exec_depend>xacro</exec_depend>
+
+</package>

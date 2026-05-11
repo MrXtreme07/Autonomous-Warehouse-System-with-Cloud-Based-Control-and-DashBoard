@@ -23,6 +23,14 @@ class EventSeverity(str, Enum):
     ERROR = "error"
 
 
+class MissionPipelineStage(str, Enum):
+    RFID_AUTH = "RFID_AUTH"
+    ORDER_CREATED = "ORDER_CREATED"
+    ROBOT_DEPLOYED = "ROBOT_DEPLOYED"
+    PACKAGE_CONFIRMED = "PACKAGE_CONFIRMED"
+    DELIVERY_COMPLETE = "DELIVERY_COMPLETE"
+
+
 class WarehouseEvent(BaseModel):
     id: str = Field(default_factory=lambda: uuid4().hex)
     timestamp: str = Field(default_factory=lambda: datetime.now().strftime("%H:%M:%S"))
@@ -76,6 +84,7 @@ class TelemetrySnapshot(BaseModel):
     dht22: DHT22Data = Field(default_factory=DHT22Data)
     rfid: RFIDData = Field(default_factory=RFIDData)
     robot: RobotData = Field(default_factory=RobotData)
+    pipelineStage: MissionPipelineStage = MissionPipelineStage.RFID_AUTH
 
 
 class WebSocketMessage(BaseModel):

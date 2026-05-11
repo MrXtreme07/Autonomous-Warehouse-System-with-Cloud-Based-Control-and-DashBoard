@@ -224,6 +224,12 @@ src/AutoWarehouse/
 
 # Running the Project
 
+All website and backend code lives in:
+
+```bash
+cd src/AutoWarehouse
+```
+
 ## 1. Install Mosquitto
 
 ```bash
@@ -240,11 +246,39 @@ sudo systemctl start mosquitto
 
 ---
 
-## 2. Run Backend
+## 2. Check Hostname / Wi-Fi IP
+
+Use one of these commands to find the address other devices on the same Wi-Fi should use:
 
 ```bash
-cd backend
+hostname -I
+```
 
+or:
+
+```bash
+ip -4 addr show scope global
+```
+
+Look for the Wi-Fi interface, usually `wlan0`, `wlo1`, or `wlp...`.
+
+Example:
+
+```text
+10.149.201.155
+```
+
+Use your actual IP in the frontend command below.
+
+---
+
+## 3. Run Backend
+
+```bash
+cd src/AutoWarehouse/backend
+
+python3.11 -m venv .venv
+source .venv/bin/activate
 pip install -r requirements.txt
 
 uvicorn app.main:app --reload --host 0.0.0.0 --port 8000
@@ -252,30 +286,66 @@ uvicorn app.main:app --reload --host 0.0.0.0 --port 8000
 
 ---
 
-## 3. Run Frontend
+## 4. Run Frontend For Local Browser Only
 
 ```bash
+cd src/AutoWarehouse
 npm install
 npm run dev
 ```
 
+Open:
+
+```text
+http://localhost:5173/
+```
+
 ---
 
-## 4. Run Simulator (Optional)
+## 5. Publish Dashboard On Same Wi-Fi
+
+Replace `YOUR_WIFI_IP` with the IP from step 2:
 
 ```bash
-cd backend
+cd src/AutoWarehouse
+VITE_API_BASE_URL=http://YOUR_WIFI_IP:8000 \
+VITE_WS_URL=ws://YOUR_WIFI_IP:8000/ws \
+npm run dev -- --host 0.0.0.0 --port 5174
+```
+
+Then open this URL from any device on the same Wi-Fi:
+
+```text
+http://YOUR_WIFI_IP:5174/
+```
+
+Example:
+
+```text
+http://10.149.201.155:5174/
+```
+
+---
+
+## 6. Run MQTT Simulator
+
+In another terminal:
+
+```bash
+cd src/AutoWarehouse/backend
+source .venv/bin/activate
 python simulator.py
 ```
 
-This simulates:
-- RFID authentication
-- robot movement
-- package confirmation
-- ultrasonic alerts
-- environment telemetry
+---
 
-without requiring hardware.
+## 7. Quick Health Checks
+
+```bash
+curl http://localhost:8000/health
+curl http://localhost:8000/state
+curl http://localhost:8000/telemetry
+```
 
 ---
 
@@ -293,6 +363,14 @@ mosquitto_pub -t rfid/access -m '{"user":"Anirudh","status":"AUTHORIZED"}'
 
 ```bash
 mosquitto_pub -t sensor/loadcell -m '{"weight":520}'
+```
+
+---
+
+## Package Collected Mission Event
+
+```bash
+mosquitto_pub -t system/event -m '{"type":"PACKAGE_COLLECTED","message":"Package collected successfully"}'
 ```
 
 ---

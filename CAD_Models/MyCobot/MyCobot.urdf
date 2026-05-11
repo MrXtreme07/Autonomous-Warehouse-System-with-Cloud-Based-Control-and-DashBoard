@@ -1,0 +1,195 @@
+<?xml version='1.0' encoding='utf-8'?>
+<robot name="MyCobot">
+    <link name="Shoulder">
+        <inertial>
+            <origin xyz="-0.01270061290886219 -0.09484209072331873 -4.901973276183469e-09" rpy="0.0 -0.0 0.0" />
+            <mass value="8.024271929562868" />
+            <inertia ixx="0.024772364399565983" iyy="0.009415240199449023" izz="0.02777043106969257" ixy="-0.005564799586112321" iyz="0.0" ixz="5.854691731421724e-18" />
+        </inertial>
+        <visual name="Shoulder_visual">
+            <origin xyz="-1.7763568394002505e-17 0.0010000000000000143 -4.901973278403915e-09" rpy="-2.070103013294893e-54 -1.214306433183765e-16 3.141592653589793" />
+            <geometry>
+                <mesh filename="meshes/Shoulder.stl" scale="0.001 0.001 0.001" />
+            </geometry>
+        </visual>
+        <collision name="Shoulder_collision">
+            <origin xyz="-1.7763568394002505e-17 0.0010000000000000143 -4.901973278403915e-09" rpy="-2.070103013294893e-54 -1.214306433183765e-16 3.141592653589793" />
+            <geometry>
+                <mesh filename="meshes/Shoulder.stl" scale="0.001 0.001 0.001" />
+            </geometry>
+        </collision>
+    </link>
+    <link name="Elbow">
+        <inertial>
+            <origin xyz="0.10000000010851523 4.90196206293092e-09 -0.055712355408531276" rpy="0.0 -0.0 0.0" />
+            <mass value="12.100373929907606" />
+            <inertia ixx="0.014801447821776198" iyy="0.08345221782910262" izz="0.07832632784141991" ixy="-1.314226505400029e-14" iyz="7.740336149808513e-15" ixz="-7.596057116643351e-11" />
+        </inertial>
+        <visual name="Elbow_visual">
+            <origin xyz="0.09999999999999987 4.901973100768231e-09 -0.0725000000000004" rpy="-1.570796326794897 -1.5707963267948966 0" />
+            <geometry>
+                <mesh filename="meshes/Elbow.stl" scale="0.001 0.001 0.001" />
+            </geometry>
+        </visual>
+        <collision name="Elbow_collision">
+            <origin xyz="0.09999999999999987 4.901973100768231e-09 -0.0725000000000004" rpy="-1.570796326794897 -1.5707963267948966 0" />
+            <geometry>
+                <mesh filename="meshes/Elbow.stl" scale="0.001 0.001 0.001" />
+            </geometry>
+        </collision>
+    </link>
+    <link name="Wrist">
+        <inertial>
+            <origin xyz="0.0200907596061991 -0.19999999509802596 -0.05240924039380074" rpy="0.0 -0.0 0.0" />
+            <mass value="5.055477786292251" />
+            <inertia ixx="0.006271229420702851" iyy="0.008502817922332984" izz="0.006271229420702795" ixy="0.0" iyz="0.0" ixz="0.0020859813665959903" />
+        </inertial>
+        <visual name="Wrist_visual">
+            <origin xyz="0.07499999999999979 -0.199999995098026 -0.07250000000000005" rpy="1.5707963267948961 -1.5707963267948966 0" />
+            <geometry>
+                <mesh filename="meshes/Wrist.stl" scale="0.001 0.001 0.001" />
+            </geometry>
+        </visual>
+        <collision name="Wrist_collision">
+            <origin xyz="0.07499999999999979 -0.199999995098026 -0.07250000000000005" rpy="1.5707963267948961 -1.5707963267948966 0" />
+            <geometry>
+                <mesh filename="meshes/Wrist.stl" scale="0.001 0.001 0.001" />
+            </geometry>
+        </collision>
+    </link>
+    <link name="End-Effector">
+        <inertial>
+            <origin xyz="2.4225609873695932e-08 0.06189134462475529 0.01798162837351022" rpy="0.0 -0.0 0.0" />
+            <mass value="7.804427026517193" />
+            <inertia ixx="0.018692662459174336" iyy="0.015467550309169298" izz="0.010177178822173616" ixy="6.99621449662402e-09" iyz="-0.0014887801215505148" ixz="3.034805268198326e-09" />
+        </inertial>
+        <visual name="End-Effector_visual">
+            <origin xyz="-8.881784197001253e-17 0.07249999999999965 0.1000000049019738" rpy="-1.5707963267948961 2.428612866367529e-16 -3.141592653589793" />
+            <geometry>
+                <mesh filename="meshes/End-Effector.stl" scale="0.001 0.001 0.001" />
+            </geometry>
+        </visual>
+        <collision name="End-Effector_collision">
+            <origin xyz="-8.881784197001253e-17 0.07249999999999965 0.1000000049019738" rpy="-1.5707963267948961 2.428612866367529e-16 -3.141592653589793" />
+            <geometry>
+                <mesh filename="meshes/End-Effector.stl" scale="0.001 0.001 0.001" />
+            </geometry>
+        </collision>
+    </link>
+    <link name="Elbow">
+        <inertial>
+            <origin xyz="1.1084466677857563e-14 -0.09999999520654144 0.05571235540853106" rpy="0.0 -0.0 0.0" />
+            <mass value="12.100373929907606" />
+            <inertia ixx="0.08345221782910317" iyy="0.014801447821776392" izz="0.07832632784141946" ixy="-1.3211653993039363e-14" iyz="-7.59605572886457e-11" ixz="7.743805596760467e-15" />
+        </inertial>
+        <visual name="Elbow_visual">
+            <origin xyz="7.105427357601002e-17 -0.09999999509802612 0.07250000000000019" rpy="-3.1415926535897927 1.5707963267948966 0" />
+            <geometry>
+                <mesh filename="meshes/Elbow.stl" scale="0.001 0.001 0.001" />
+            </geometry>
+        </visual>
+        <collision name="Elbow_collision">
+            <origin xyz="7.105427357601002e-17 -0.09999999509802612 0.07250000000000019" rpy="-3.1415926535897927 1.5707963267948966 0" />
+            <geometry>
+                <mesh filename="meshes/Elbow.stl" scale="0.001 0.001 0.001" />
+            </geometry>
+        </collision>
+    </link>
+    <link name="Base">
+        <inertial>
+            <origin xyz="7.714115227794962e-05 -0.016125353329435536 0.07618934272722483" rpy="0.0 -0.0 0.0" />
+            <mass value="21.712181229480198" />
+            <inertia ixx="0.07514807621417607" iyy="0.07042386727605082" izz="0.0632196641398263" ixy="5.749766031248734e-05" iyz="-0.00037537844330210596" ixz="4.520455248364092e-05" />
+        </inertial>
+        <visual name="Base_visual">
+            <origin xyz="-1.7763568394002505e-17 -0.01209192490197328 0.0225" rpy="1.5707963267948966 -0.0 0.0" />
+            <geometry>
+                <mesh filename="meshes/Base.stl" scale="0.001 0.001 0.001" />
+            </geometry>
+        </visual>
+        <collision name="Base_collision">
+            <origin xyz="-1.7763568394002505e-17 -0.01209192490197328 0.0225" rpy="1.5707963267948966 -0.0 0.0" />
+            <geometry>
+                <mesh filename="meshes/Base.stl" scale="0.001 0.001 0.001" />
+            </geometry>
+        </collision>
+    </link>
+    <link name="base_link">
+        <inertial>
+            <origin xyz="2.826623924139806e-17 0.0 0.025" rpy="0.0 0.0 0.0" />
+            <mass value="20.206532175560433" />
+            <inertia ixx="0.08699133846138483" iyy="0.08699133846138923" izz="0.16556328851629057" ixy="1.3707904145121574e-16" iyz="-1.1423253454267979e-17" ixz="-1.9990693544968962e-17" />
+        </inertial>
+        <visual name="base_link_visual">
+            <origin xyz="0.0 0.0 0.0" rpy="0.0 0.0 0.0" />
+            <geometry>
+                <mesh filename="meshes/base_link.stl" scale="0.001 0.001 0.001" />
+            </geometry>
+        </visual>
+        <collision name="base_link_collision">
+            <origin xyz="0.0 0.0 0.0" rpy="0.0 0.0 0.0" />
+            <geometry>
+                <mesh filename="meshes/base_link.stl" scale="0.001 0.001 0.001" />
+            </geometry>
+        </collision>
+    </link>
+    <link name="Body2-1-1-1">
+        <inertial>
+            <origin xyz="0.001261644781010478 0.0013366765736660114 0.04442929752657784" rpy="0.0 -0.0 0.0" />
+            <mass value="1.688239279759767" />
+            <inertia ixx="0.001727841748382808" iyy="0.0022039410194304304" izz="0.001195455676710866" ixy="-5.0039664785117566e-05" iyz="0.00022684757221373697" ixz="6.0074879147560545e-06" />
+        </inertial>
+        <visual name="Body2-1-1-1_visual">
+            <origin xyz="0.08936260708232659 -1.1567509055000005 0.3482077940836556" rpy="-1.570796326794897 -4.947947387264036e-32 -1.2208100351314737e-16" />
+            <geometry>
+                <mesh filename="meshes/Body2-1-1-1.stl" scale="0.001 0.001 0.001" />
+            </geometry>
+        </visual>
+        <collision name="Body2-1-1-1_collision">
+            <origin xyz="0.08936260708232659 -1.1567509055000005 0.3482077940836556" rpy="-1.570796326794897 -4.947947387264036e-32 -1.2208100351314737e-16" />
+            <geometry>
+                <mesh filename="meshes/Body2-1-1-1.stl" scale="0.001 0.001 0.001" />
+            </geometry>
+        </collision>
+    </link>
+    <joint name="base_link_Rigid-1" type="fixed">
+        <origin xyz="0.0 0.0 0.05" rpy="0.0 -0.0 0.0" />
+        <parent link="base_link" />
+        <child link="Base" />
+    </joint>
+    <joint name="Base_Revolute-2" type="continuous">
+        <origin xyz="0.0 -0.01209192 0.1625" rpy="-1.5707963267948966 -0.0 0.0" />
+        <parent link="Base" />
+        <child link="Shoulder" />
+        <axis xyz="0.0 -1.0 0.0" />
+    </joint>
+    <joint name="Shoulder_Revolute-3" type="continuous">
+        <origin xyz="-0.07400000000000001 -0.149 0.0" rpy="-1.5707963267948966 -0.0 -1.5707963267948966" />
+        <parent link="Shoulder" />
+        <child link="Elbow" />
+        <axis xyz="0.0 -0.0 -1.0" />
+    </joint>
+    <joint name="Elbow_Revolute-4" type="continuous">
+        <origin xyz="0.2 0.0 0.0" rpy="0.0 -4.145636153940587e-34 0.0" />
+        <parent link="Elbow" />
+        <child link="Elbow" />
+        <axis xyz="4.145636153940587e-34 0.0 1.0" />
+    </joint>
+    <joint name="Elbow_Revolute-5" type="continuous">
+        <origin xyz="0.0 0.0 0.0" rpy="0.0 -0.0 0.0" />
+        <parent link="Elbow" />
+        <child link="Wrist" />
+        <axis xyz="-4.145636153940587e-34 -0.0 -1.0" />
+    </joint>
+    <joint name="Wrist_Revolute-6" type="continuous">
+        <origin xyz="0.0725 -0.2 -0.0725" rpy="-1.5707963267948966 -1.5707963267948966 0" />
+        <parent link="Wrist" />
+        <child link="End-Effector" />
+        <axis xyz="-7.499960967811932e-43 1.0 0.0" />
+    </joint>
+    <joint name="End-Effector_Rigid-8" type="fixed">
+        <origin xyz="0.0 0.07250000000000008 0.09749999999999999" rpy="0.0 1.7566729632712575e-34 -4.81482478596848e-35" />
+        <parent link="End-Effector" />
+        <child link="Body2-1-1-1" />
+    </joint>
+</robot>

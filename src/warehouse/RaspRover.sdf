@@ -345,8 +345,8 @@
           <limit>
             <lower>-10000000000000000</lower>
             <upper>10000000000000000</upper>
-            <effort>inf</effort>
-            <velocity>inf</velocity>
+            <effort>20</effort>
+            <velocity>2</velocity>
             <stiffness>100000000</stiffness>
             <dissipation>1</dissipation>
           </limit>
@@ -367,8 +367,8 @@
           <limit>
             <lower>-10000000000000000</lower>
             <upper>10000000000000000</upper>
-            <effort>inf</effort>
-            <velocity>inf</velocity>
+            <effort>10</effort>
+            <velocity>20</velocity>
             <stiffness>100000000</stiffness>
             <dissipation>1</dissipation>
           </limit>
@@ -389,8 +389,8 @@
           <limit>
             <lower>-10000000000000000</lower>
             <upper>10000000000000000</upper>
-            <effort>inf</effort>
-            <velocity>inf</velocity>
+            <effort>10</effort>
+            <velocity>20</velocity>
             <stiffness>100000000</stiffness>
             <dissipation>1</dissipation>
           </limit>
@@ -411,8 +411,8 @@
           <limit>
             <lower>-10000000000000000</lower>
             <upper>10000000000000000</upper>
-            <effort>inf</effort>
-            <velocity>inf</velocity>
+            <effort>10</effort>
+            <velocity>20</velocity>
             <stiffness>100000000</stiffness>
             <dissipation>1</dissipation>
           </limit>
@@ -433,8 +433,8 @@
           <limit>
             <lower>-1.0471999999999999</lower>
             <upper>0.436332</upper>
-            <effort>inf</effort>
-            <velocity>inf</velocity>
+            <effort>10</effort>
+            <velocity>20</velocity>
             <stiffness>100000000</stiffness>
             <dissipation>1</dissipation>
           </limit>
@@ -455,8 +455,8 @@
           <limit>
             <lower>-10000000000000000</lower>
             <upper>10000000000000000</upper>
-            <effort>inf</effort>
-            <velocity>inf</velocity>
+            <effort>10</effort>
+            <velocity>20</velocity>
             <stiffness>100000000</stiffness>
             <dissipation>1</dissipation>
           </limit>
@@ -522,17 +522,47 @@
       <self_collide>false</self_collide>
     </model>
     <model name='joints'>
+      <plugin filename="libignition-gazebo-joint-state-publisher-system.so" name="ignition::gazebo::systems::JointStatePublisher"/>
       <plugin
-        filename="ignition-gazebo-joint-controller-system"
-        name="ignition::gazebo::systems::JointController">
+        filename="gz-sim-joint-position-controller-system"
+        name="ignition::gazebo::systems::JointPositionController">
 
         <joint_name>base_link_j1</joint_name>
-        <joint_name>shoulder_j2</joint_name>
-        <joint_name>elbow1_j3</joint_name>
-        <joint_name>elbow2_j4</joint_name>
-        <joint_name>wrist_j5</joint_name>
-        <joint_name>endeff_j6</joint_name>
+      </plugin>
 
+      <plugin
+        filename="gz-sim-joint-position-controller-system"
+        name="ignition::gazebo::systems::JointPositionController">
+
+        <joint_name>shoulder_j2</joint_name>
+      </plugin>
+
+      <plugin
+        filename="gz-sim-joint-position-controller-system"
+        name="ignition::gazebo::systems::JointPositionController">
+
+        <joint_name>elbow1_j3</joint_name>
+      </plugin>
+
+      <plugin
+        filename="gz-sim-joint-position-controller-system"
+        name="ignition::gazebo::systems::JointPositionController">
+
+        <joint_name>elbow2_j4</joint_name>
+      </plugin>
+
+      <plugin
+        filename="gz-sim-joint-position-controller-system"
+        name="ignition::gazebo::systems::JointPositionController">
+
+        <joint_name>wrist_j5</joint_name>
+      </plugin>
+
+      <plugin
+        filename="gz-sim-joint-position-controller-system"
+        name="ignition::gazebo::systems::JointPositionController">
+
+        <joint_name>endeff_j6</joint_name>
       </plugin>
       <link name='shoulder'>
         <pose>0 0.032123 0.051938 1.5708 -0 0</pose>
@@ -911,10 +941,10 @@
         <axis>
           <xyz>0 1 0</xyz>
           <limit>
-            <lower>-10000000000000000</lower>
-            <upper>10000000000000000</upper>
-            <effort>inf</effort>
-            <velocity>inf</velocity>
+            <lower>-3.14</lower>
+            <upper>3.14</upper>
+            <effort>20</effort>
+            <velocity>2</velocity>
             <stiffness>100000000</stiffness>
             <dissipation>1</dissipation>
           </limit>
@@ -933,10 +963,10 @@
         <axis>
           <xyz>-1 0 0</xyz>
           <limit>
-            <lower>-10000000000000000</lower>
-            <upper>10000000000000000</upper>
-            <effort>inf</effort>
-            <velocity>inf</velocity>
+            <lower>-3.14</lower>
+            <upper>3.14</upper>
+            <effort>20</effort>
+            <velocity>2</velocity>
             <stiffness>100000000</stiffness>
             <dissipation>1</dissipation>
           </limit>
@@ -955,10 +985,10 @@
         <axis>
           <xyz>-1 0 0</xyz>
           <limit>
-            <lower>-10000000000000000</lower>
-            <upper>10000000000000000</upper>
-            <effort>inf</effort>
-            <velocity>inf</velocity>
+            <lower>-3.14</lower>
+            <upper>3.14</upper>
+            <effort>20</effort>
+            <velocity>2</velocity>
             <stiffness>100000000</stiffness>
             <dissipation>1</dissipation>
           </limit>
@@ -977,10 +1007,10 @@
         <axis>
           <xyz>-1 -0 0</xyz>
           <limit>
-            <lower>-10000000000000000</lower>
-            <upper>10000000000000000</upper>
-            <effort>inf</effort>
-            <velocity>inf</velocity>
+            <lower>-3.14</lower>
+            <upper>3.14</upper>
+            <effort>20</effort>
+            <velocity>2</velocity>
             <stiffness>100000000</stiffness>
             <dissipation>1</dissipation>
           </limit>
@@ -999,10 +1029,10 @@
         <axis>
           <xyz>0 0 -1</xyz>
           <limit>
-            <lower>-10000000000000000</lower>
-            <upper>10000000000000000</upper>
-            <effort>inf</effort>
-            <velocity>inf</velocity>
+            <lower>-3.14</lower>
+            <upper>3.14</upper>
+            <effort>20</effort>
+            <velocity>2</velocity>
             <stiffness>100000000</stiffness>
             <dissipation>1</dissipation>
           </limit>
@@ -1021,10 +1051,10 @@
         <axis>
           <xyz>0 -1 0</xyz>
           <limit>
-            <lower>-10000000000000000</lower>
-            <upper>10000000000000000</upper>
-            <effort>inf</effort>
-            <velocity>inf</velocity>
+            <lower>-3.14</lower>
+            <upper>3.14</upper>
+            <effort>20</effort>
+            <velocity>2</velocity>
             <stiffness>100000000</stiffness>
             <dissipation>1</dissipation>
           </limit>
@@ -1050,8 +1080,8 @@
           <limit>
             <lower>-0.029999999999999999</lower>
             <upper>0</upper>
-            <effort>inf</effort>
-            <velocity>inf</velocity>
+            <effort>20</effort>
+            <velocity>2</velocity>
             <stiffness>100000000</stiffness>
             <dissipation>1</dissipation>
           </limit>
@@ -1072,8 +1102,8 @@
           <limit>
             <lower>0</lower>
             <upper>0.029999999999999999</upper>
-            <effort>inf</effort>
-            <velocity>inf</velocity>
+            <effort>20</effort>
+            <velocity>2</velocity>
             <stiffness>100000000</stiffness>
             <dissipation>1</dissipation>
           </limit>

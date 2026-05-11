@@ -32,6 +32,7 @@ async def reset_system(request: Request) -> CommandResponse:
     mqtt = request.app.state.mqtt
 
     state_manager.set_state(SystemState.IDLE)
+    request.app.state.telemetry_service.reset_pipeline()
     mqtt.publish("system/state", json.dumps({"state": SystemState.IDLE}))
     event = event_manager.add(
         source="operator",
@@ -40,6 +41,7 @@ async def reset_system(request: Request) -> CommandResponse:
         message="Alerts reset; system returned to IDLE",
     )
     await websocket_manager.broadcast("state", state_manager.snapshot().model_dump(mode="json"))
+    await websocket_manager.broadcast("telemetry", request.app.state.telemetry_service.snapshot().model_dump(mode="json"))
     await websocket_manager.broadcast("event", event.model_dump(mode="json"))
     await websocket_manager.broadcast("events", [item.model_dump(mode="json") for item in event_manager.list()])
     return CommandResponse(accepted=True, command="reset", state=state_manager.state)

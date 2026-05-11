@@ -34,5 +34,9 @@ async def _send_and_broadcast(request: Request, command: str) -> CommandResponse
         "state",
         request.app.state.state_manager.snapshot().model_dump(mode="json"),
     )
+    await request.app.state.websocket_manager.broadcast(
+        "telemetry",
+        request.app.state.telemetry_service.snapshot().model_dump(mode="json"),
+    )
     await request.app.state.websocket_manager.broadcast("events", events)
     return response

@@ -1,4 +1,10 @@
 export type SystemState = 'LOCKED' | 'IDLE' | 'ACTIVE' | 'PAUSED' | 'ERROR'
+export type MissionPipelineStageName =
+  | 'RFID_AUTH'
+  | 'ORDER_CREATED'
+  | 'ROBOT_DEPLOYED'
+  | 'PACKAGE_CONFIRMED'
+  | 'DELIVERY_COMPLETE'
 
 export interface LoadCellData {
   weight: number
@@ -29,6 +35,8 @@ export interface RobotData {
   speed: number
   position: { x: number; y: number }
   status: 'idle' | 'moving' | 'returning' | 'stopped' | 'error'
+  online: boolean
+  lastHeartbeat: string | null
 }
 
 export interface TelemetryData {
@@ -37,6 +45,7 @@ export interface TelemetryData {
   dht22: DHT22Data
   rfid: RFIDData
   robot: RobotData
+  pipelineStage: MissionPipelineStageName
 }
 
 export interface TimelineEvent {
@@ -44,6 +53,27 @@ export interface TimelineEvent {
   timestamp: string
   message: string
   type: 'info' | 'success' | 'warning' | 'error'
+}
+
+export interface BackendEvent {
+  id: string
+  timestamp: string
+  source: string
+  type: string
+  severity: 'info' | 'success' | 'warning' | 'error'
+  message: string
+  data: Record<string, unknown>
+}
+
+export interface BackendWebSocketMessage {
+  type: 'state' | 'event' | 'events' | 'telemetry' | string
+  payload: { state: SystemState } | BackendEvent | BackendEvent[] | TelemetryData | null
+}
+
+export interface CommandResponse {
+  accepted: boolean
+  command: string
+  state: SystemState
 }
 
 export interface MissionStage {

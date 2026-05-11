@@ -45,6 +45,12 @@ def main() -> None:
             )
             time.sleep(1)
             publish_json(client, "sensor/loadcell", {"weight": random.choice([0, 120, 520, 740])})
+            if random.random() > 0.6:
+                publish_json(
+                    client,
+                    "system/event",
+                    {"type": "PACKAGE_COLLECTED", "message": "Package collected successfully"},
+                )
             publish_json(client, "sensor/ultrasonic", {"distance": random.choice([12, 18, 45, 90, 150])})
             publish_json(
                 client,

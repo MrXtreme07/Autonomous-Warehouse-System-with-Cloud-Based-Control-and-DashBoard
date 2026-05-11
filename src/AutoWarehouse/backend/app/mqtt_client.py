@@ -9,7 +9,8 @@ from typing import Any
 import paho.mqtt.client as mqtt
 
 from app.event_manager import EventManager
-from app.models.schemas import EventSeverity, SystemState, WarehouseEvent
+from app.mission_pipeline import stage_for_system_event
+from app.models.schemas import EventSeverity, MissionPipelineStage, SystemState, WarehouseEvent
 from app.services.telemetry_service import TelemetryService
 from app.state_manager import StateManager
 from app.websocket_manager import WebSocketManager
@@ -137,6 +138,7 @@ class MqttBridge:
             if status == "AUTHORIZED":
                 if self.state_manager.state == SystemState.LOCKED:
                     state_changed = self.state_manager.set_state(SystemState.IDLE)
+                self.telemetry_service.set_pipeline_stage(MissionPipelineStage.RFID_AUTH)
                 event = self.event_manager.add(
                     source="rfid",
                     event_type="AUTH_SUCCESS",
@@ -158,6 +160,7 @@ class MqttBridge:
             self.telemetry_service.update_loadcell(payload)
             weight = float(payload.get("weight", 0))
             if weight > 300:
+                self.telemetry_service.set_pipeline_stage(MissionPipelineStage.PACKAGE_CONFIRMED)
                 event = self.event_manager.add(
                     source="loadcell",
                     event_type="PACKAGE_CONFIRMED",
@@ -205,10 +208,16 @@ class MqttBridge:
             self.telemetry_service.update_robot_speed(payload)
 
         elif topic == "system/event":
+            event_type = str(payload.get("type", "SYSTEM_EVENT")).upper()
+            stage = stage_for_system_event(event_type)
+            if stage is not None:
+                telemetry_changed = True
+                self.telemetry_service.set_pipeline_stage(stage)
+
             event = self.event_manager.add(
                 source=str(payload.get("source", "system")),
-                event_type=str(payload.get("type", "SYSTEM_EVENT")),
-                severity=EventSeverity(payload.get("severity", "info")),
+                event_type=event_type,
+                severity=self._event_severity(payload, event_type),
                 message=str(payload.get("message", "System event received")),
                 data=payload,
             )
@@ -230,3 +239,15 @@ class MqttBridge:
             self.websocket_manager.broadcast(message_type, payload),
             self.loop,
         )
+
+    @staticmethod
+    def _event_severity(payload: dict[str, Any], event_type: str) -> EventSeverity:
+        if "severity" in payload:
+            try:
+                return EventSeverity(payload["severity"])
+            except ValueError:
+                logger.warning("Unknown event severity: %s", payload["severity"])
+
+        if event_type in {"PACKAGE_COLLECTED", "PACKAGE_CONFIRMED", "DELIVERY_COMPLETE", "MISSION_COMPLETE"}:
+            return EventSeverity.SUCCESS
+        return EventSeverity.INFO

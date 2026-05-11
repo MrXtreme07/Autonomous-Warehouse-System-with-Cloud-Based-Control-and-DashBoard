@@ -1,0 +1,15 @@
+FrontEnd:
+src/AutoWarehouse
+VITE_API_BASE_URL=http://10.149.201.155:8000 \
+VITE_WS_URL=ws://10.149.201.155:8000/ws \
+npm run dev -- --host 0.0.0.0 --port 5174
+
+BackEnd:
+
+src/AutoWarehouse/backend
+uvicorn app.main:app --reload --host 0.0.0.0 --port 8000
+
+MQTT Broker:
+sudo systemctl start mosquitto
+sudo systemctl status mosquitto
+mosquitto_sub -h localhost -t "#"

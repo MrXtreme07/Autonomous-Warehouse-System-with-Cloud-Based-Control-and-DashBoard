@@ -5,7 +5,8 @@ import logging
 from typing import Protocol
 
 from app.event_manager import EventManager
-from app.models.schemas import CommandResponse, EventSeverity, SystemState
+from app.models.schemas import CommandResponse, EventSeverity, MissionPipelineStage, SystemState
+from app.services.telemetry_service import TelemetryService
 from app.state_manager import StateManager
 
 logger = logging.getLogger(__name__)
@@ -24,10 +25,12 @@ class RobotService:
         publisher: Publisher,
         state_manager: StateManager,
         event_manager: EventManager,
+        telemetry_service: TelemetryService,
     ) -> None:
         self.publisher = publisher
         self.state_manager = state_manager
         self.event_manager = event_manager
+        self.telemetry_service = telemetry_service
 
     def send_command(self, command: str) -> CommandResponse:
         state_after_command = {
@@ -39,6 +42,9 @@ class RobotService:
 
         if state_after_command is not None:
             self.state_manager.set_state(state_after_command)
+
+        if command == "deploy":
+            self.telemetry_service.set_pipeline_stage(MissionPipelineStage.ROBOT_DEPLOYED)
 
         payload = json.dumps({"command": command})
         self.publisher.publish("robot/command", payload)

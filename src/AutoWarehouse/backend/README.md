@@ -34,6 +34,43 @@ export MQTT_HOST=localhost
 export MQTT_PORT=1883
 ```
 
+## Check Hostname / Wi-Fi IP
+
+Run one of these on the Raspberry Pi or laptop hosting the dashboard:
+
+```bash
+hostname -I
+```
+
+or:
+
+```bash
+ip -4 addr show scope global
+```
+
+Look for the Wi-Fi interface address, usually on `wlan0`, `wlo1`, or `wlp...`.
+
+Example:
+
+```text
+10.149.201.155
+```
+
+Use that address for frontend API and WebSocket URLs when opening the dashboard from another device on the same Wi-Fi:
+
+```bash
+cd src/AutoWarehouse
+VITE_API_BASE_URL=http://YOUR_WIFI_IP:8000 \
+VITE_WS_URL=ws://YOUR_WIFI_IP:8000/ws \
+npm run dev -- --host 0.0.0.0 --port 5174
+```
+
+Open:
+
+```text
+http://YOUR_WIFI_IP:5174/
+```
+
 ## REST API
 
 - `GET /state`
@@ -52,6 +89,12 @@ Dashboard clients connect to:
 
 ```text
 ws://localhost:8000/ws
+```
+
+When using another device on the same Wi-Fi, replace `localhost` with the host IP:
+
+```text
+ws://YOUR_WIFI_IP:8000/ws
 ```
 
 Messages are JSON:

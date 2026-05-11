@@ -4,7 +4,7 @@ from datetime import datetime
 from threading import RLock
 from typing import Any
 
-from app.models.schemas import TelemetrySnapshot
+from app.models.schemas import MissionPipelineStage, TelemetrySnapshot
 
 
 class TelemetryService:
@@ -35,7 +35,7 @@ class TelemetryService:
     def update_dht22(self, payload: dict[str, Any]) -> TelemetrySnapshot:
         temperature = float(payload.get("temperature", payload.get("temp", 0)))
         humidity = float(payload.get("humidity", 0))
-        status = "critical" if temperature >= 40 or humidity >= 85 else "warning" if temperature >= 32 or humidity >= 70 else "normal"
+        status = "critical" if temperature >= 40 or humidity >= 85 else "warning" if temperature >= 35 or humidity >= 70 else "normal"
         with self._lock:
             self._telemetry.dht22.temperature = temperature
             self._telemetry.dht22.humidity = humidity
@@ -49,6 +49,8 @@ class TelemetryService:
             self._telemetry.rfid.lastTag = tag
             self._telemetry.rfid.authenticated = status == "AUTHORIZED"
             self._telemetry.rfid.timestamp = datetime.now().strftime("%H:%M:%S")
+            if status == "AUTHORIZED":
+                self._telemetry.pipelineStage = MissionPipelineStage.RFID_AUTH
             return self.snapshot()
 
     def update_robot_status(self, payload: dict[str, Any]) -> TelemetrySnapshot:
@@ -100,6 +102,14 @@ class TelemetryService:
             self._telemetry.robot.status = "error"
             self._robot_offline_reported = True
             return True
+
+    def set_pipeline_stage(self, stage: MissionPipelineStage) -> TelemetrySnapshot:
+        with self._lock:
+            self._telemetry.pipelineStage = stage
+            return self.snapshot()
+
+    def reset_pipeline(self) -> TelemetrySnapshot:
+        return self.set_pipeline_stage(MissionPipelineStage.RFID_AUTH)
 
     def snapshot(self) -> TelemetrySnapshot:
         with self._lock:

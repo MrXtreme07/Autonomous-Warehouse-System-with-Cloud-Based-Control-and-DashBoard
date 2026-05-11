@@ -59,6 +59,7 @@ async def lifespan(app: FastAPI):
         publisher=app.state.mqtt,
         state_manager=app.state.state_manager,
         event_manager=app.state.event_manager,
+        telemetry_service=app.state.telemetry_service,
     )
 
     app.state.event_manager.add(
