@@ -43,3 +43,11 @@ Thumbs.db
 *.so
 *.a
 *.o
+
+src/warehouse
+src/build
+src/ESP_MQTT_Communication
+src/install
+src/log
+src/mycobot_sim
+src/urdf
